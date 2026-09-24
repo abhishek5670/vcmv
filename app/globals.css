@@ -1,26 +1,131 @@
 @import "tailwindcss";
 
+/* ─── VCMV Design Tokens ──────────────────────────────────────────── */
+:root, [data-theme="default"] {
+  --theme-darkest: #2b2a28;
+  --theme-dark:    #6b6258;
+  --theme-accent:  #c9a86a;
+  --theme-light:   #efe2c8;
+  --theme-lightest:#fff9ef;
+}
+
+[data-theme="green"] {
+  --theme-darkest: #0E3B2E;
+  --theme-dark:    #1F6F54;
+  --theme-accent:  #5FB88A;
+  --theme-light:   #D7E7DD;
+  --theme-lightest:#F6FBF7;
+}
+
+[data-theme="slate"] {
+  --theme-darkest: #0F172A;
+  --theme-dark:    #4B5563;
+  --theme-accent:  #9CA3AF;
+  --theme-light:   #E5E7EB;
+  --theme-lightest:#FFFFFF;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Map active theme to existing VCMV variables */
+  --vcmv-charcoal: var(--theme-darkest);
+  --vcmv-taupe:    var(--theme-dark);
+  --vcmv-gold:     var(--theme-accent);
+  --vcmv-cream:    var(--theme-light);
+  --vcmv-ivory:    var(--theme-lightest);
+
+  /* shadcn / Tailwind semantic tokens mapped to dynamic theme */
+  --background:         var(--theme-lightest);
+  --foreground:         var(--theme-darkest);
+  --muted:              var(--theme-light);
+  --muted-foreground:   var(--theme-dark);
+  --primary:            var(--theme-accent);
+  --primary-foreground: var(--theme-darkest);
+  --secondary:          color-mix(in srgb, var(--theme-light) 60%, var(--theme-lightest));
+  --secondary-foreground: var(--theme-darkest);
+  --accent:             color-mix(in srgb, var(--theme-light) 80%, var(--theme-lightest));
+  --accent-foreground:  var(--theme-darkest);
+  --border:             color-mix(in srgb, var(--theme-accent) 25%, transparent);
+  --input:              color-mix(in srgb, var(--theme-accent) 20%, transparent);
+  --ring:               var(--theme-accent);
+  --radius:             0.375rem;
+
+  /* Font families */
+  --font-cormorant: "Cormorant Garamond", Georgia, serif;
+  --font-inter: "Inter", system-ui, sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background:          var(--background);
+  --color-foreground:          var(--foreground);
+  --color-muted:               var(--muted);
+  --color-muted-foreground:    var(--muted-foreground);
+  --color-primary:             var(--primary);
+  --color-primary-foreground:  var(--primary-foreground);
+  --color-secondary:           var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent:              var(--accent);
+  --color-accent-foreground:   var(--accent-foreground);
+  --color-border:              var(--border);
+  --color-input:               var(--input);
+  --color-ring:                var(--ring);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base reset ──────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--vcmv-ivory);
+  color: var(--vcmv-charcoal);
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── Typography ──────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-cormorant);
+  font-weight: 600;
+  line-height: 1.18;
+  color: var(--vcmv-charcoal);
+}
+
+p {
+  font-family: var(--font-inter);
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+a {
+  color: inherit;
+}
+
+/* ─── Selection ───────────────────────────────────────────────────── */
+::selection {
+  background-color: rgba(201, 168, 106, 0.25);
+  color: var(--vcmv-charcoal);
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--vcmv-ivory);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 168, 106, 0.45);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vcmv-gold);
 }
