@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { heroSlides } from "@/content/site-content";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "motion/react";
 import gsap from "gsap";
 
 export default function HeroSlider() {
@@ -144,12 +145,17 @@ export default function HeroSlider() {
           {/* Category Label */}
           <div className="mb-6 flex items-center justify-center md:justify-start gap-3">
             <span className="inline-block h-px w-8 bg-primary shadow-sm hidden md:block" />
-            <span
-              className="text-xs tracking-[0.22em] uppercase font-medium text-primary px-4 py-2 md:px-3 md:py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-primary/30 shadow-xl"
+            <motion.span
+              animate={{ 
+                boxShadow: ["0px 0px 0px rgba(201,168,106,0)", "0px 0px 14px rgba(201,168,106,0.5)", "0px 0px 0px rgba(201,168,106,0)"],
+                borderColor: ["rgba(201,168,106,0.3)", "rgba(201,168,106,0.8)", "rgba(201,168,106,0.3)"]
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="text-[10px] sm:text-xs tracking-[0.1em] sm:tracking-[0.22em] uppercase font-medium text-primary px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-black/60 backdrop-blur-md border border-primary/30 shadow-xl whitespace-nowrap"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               CA · Tax · Assurance · Advisory
-            </span>
+            </motion.span>
           </div>
 
           <h1
