@@ -71,7 +71,7 @@ const teamMembers = [
 
 export default function TeamSection() {
   return (
-    <section id="team" className="py-24 lg:py-32 bg-background relative overflow-hidden">
+    <section id="team" className="py-12 md:py-10 md:py-12 lg:py-16 lg:py-24 lg:py-10 md:py-12 lg:py-16 md:py-12 md:py-10 md:py-12 lg:py-16 lg:py-20 lg:py-32 bg-background relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <div className="mb-16 md:mb-24 text-center">
           <h2
@@ -88,7 +88,7 @@ export default function TeamSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 md:gap-8 lg:gap-12">
           {teamMembers.map((member, index) => (
             <TeamCard key={member.name} member={member} index={index} />
           ))}

@@ -27,12 +27,12 @@ const InstagramIcon = () => (
 );
 
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Expertise", href: "#expertise" },
-  { name: "Team", href: "#team" },
-  { name: "Insights", href: "#insights" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Team", href: "/team" },
+  { name: "Insights", href: "/insights" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [
@@ -57,7 +57,7 @@ export default function Footer() {
 
       {/* ── Split section: Nav left | Contact right ── */}
       <div
-        className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-0 pt-16 pb-10"
+        className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-6 md:gap-8 lg:gap-12 lg:gap-16 lg:gap-0 pt-16 pb-10"
         style={{ borderBottom: "1px solid color-mix(in srgb, var(--vcmv-gold) 12%, transparent)" }}
       >
         {/* Left — Navigation + Socials */}
@@ -194,7 +194,7 @@ export default function Footer() {
 
             {/* Start a project link */}
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-block text-xs tracking-[0.18em] uppercase transition-colors duration-200"
               style={{
                 fontFamily: "var(--font-inter)",

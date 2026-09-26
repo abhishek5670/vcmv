@@ -9,6 +9,7 @@ import {
 } from "motion/react";
 
 import React, { useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -48,6 +49,8 @@ interface MobileNavMenuProps {
   onClose: () => void;
 }
 
+import { GlassFilter } from "./liquid-glass";
+
 export const Navbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll({
@@ -65,32 +68,36 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   });
 
   return (
-    <motion.div
-      ref={ref}
-      className={cn("fixed inset-x-0 top-0 z-40 w-full group", visible ? "is-scrolled" : "is-top", className)}
-    >
-      {React.Children.map(children, (child) =>
-        React.isValidElement(child)
-          ? React.cloneElement(
-            child as React.ReactElement<{ visible?: boolean }>,
-            { visible },
-          )
-          : child,
-      )}
-    </motion.div>
+    <>
+      <GlassFilter />
+      <motion.div
+        ref={ref}
+        className={cn("fixed inset-x-0 top-0 z-40 w-full group", visible ? "is-scrolled" : "is-top", className)}
+      >
+        {React.Children.map(children, (child) =>
+          React.isValidElement(child)
+            ? React.cloneElement(
+              child as React.ReactElement<{ visible?: boolean }>,
+              { visible },
+            )
+            : child,
+        )}
+      </motion.div>
+    </>
   );
 };
 
+import { GlassEffect } from "./liquid-glass";
+
 export const NavBody = ({ children, className, visible }: NavBodyProps) => {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  
   return (
     <motion.div
       animate={{
-        backdropFilter: visible ? "blur(12px)" : "none",
-        boxShadow: visible
-          ? "0 0 24px color-mix(in srgb, var(--vcmv-charcoal) 8%, transparent), 0 1px 0 color-mix(in srgb, var(--vcmv-gold) 15%, transparent)"
-          : "none",
-        width: visible ? "60%" : "100%",
-        y: visible ? 12 : 0,
+        width: "60%",
+        y: 12,
       }}
       transition={{
         type: "spring",
@@ -99,19 +106,32 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       }}
       style={{
         minWidth: "800px",
-        backgroundColor: visible ? "color-mix(in srgb, var(--vcmv-ivory) 92%, transparent)" : "transparent",
-        transition: "background-color 0.3s ease",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full px-6 py-3 lg:flex",
+        "relative z-[60] mx-auto hidden flex-row items-center justify-between self-start lg:flex",
         className,
       )}
     >
-      {React.Children.map(children, (child) =>
-        React.isValidElement(child)
-          ? React.cloneElement(child as React.ReactElement<any>, { visible })
-          : child
-      )}
+      <GlassEffect
+        disabled={isHome && !visible}
+        className="w-full transition-all duration-500 rounded-full"
+        style={{
+          backgroundColor: visible 
+            ? "color-mix(in srgb, var(--vcmv-ivory) 80%, transparent)" 
+            : isHome 
+              ? "transparent"
+              : "color-mix(in srgb, var(--vcmv-charcoal) 40%, transparent)",
+          transition: "background-color 0.3s ease",
+        }}
+      >
+        <div className="w-full flex flex-row items-center justify-between px-6 py-3 relative">
+          {React.Children.map(children, (child) =>
+            React.isValidElement(child)
+              ? React.cloneElement(child as React.ReactElement<any>, { visible })
+              : child
+          )}
+        </div>
+      </GlassEffect>
     </motion.div>
   );
 };
@@ -151,35 +171,43 @@ export const NavItems = ({ items, className, onItemClick, visible }: NavItemsPro
 };
 
 export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  
   return (
     <motion.div
-      initial={{ backgroundColor: "transparent" }}
       animate={{
-        backdropFilter: visible ? "blur(12px)" : "none",
-        boxShadow: visible
-          ? "0 0 24px color-mix(in srgb, var(--vcmv-charcoal) 8%, transparent)"
-          : "none",
-        width: visible ? "92%" : "100%",
-        paddingRight: visible ? "16px" : "0px",
-        paddingLeft: visible ? "16px" : "0px",
-        borderRadius: visible ? "12px" : "0px",
-        y: visible ? 12 : 0,
+        width: "92%",
+        paddingRight: "16px",
+        paddingLeft: "16px",
+        y: 12,
       }}
       transition={{
         type: "spring",
         stiffness: 200,
         damping: 50,
       }}
-      style={{
-        backgroundColor: visible ? "color-mix(in srgb, var(--vcmv-ivory) 95%, transparent)" : "transparent",
-        transition: "background-color 0.3s ease",
-      }}
       className={cn(
-        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between px-0 py-3 lg:hidden",
+        "relative z-50 mx-auto flex w-full flex-col items-center justify-between px-0 lg:hidden py-3",
         className,
       )}
     >
-      {children}
+      <GlassEffect
+        disabled={isHome && !visible}
+        className="w-full transition-all duration-500 rounded-[12px]"
+        style={{
+          backgroundColor: visible 
+            ? "color-mix(in srgb, var(--vcmv-ivory) 80%, transparent)" 
+            : isHome 
+              ? "transparent"
+              : "color-mix(in srgb, var(--vcmv-charcoal) 40%, transparent)",
+          transition: "background-color 0.3s ease",
+        }}
+      >
+        <div className="w-full flex-col items-center justify-between px-4 py-3 relative">
+          {children}
+        </div>
+      </GlassEffect>
     </motion.div>
   );
 };

@@ -21,7 +21,7 @@ export default function WhyVCMV() {
         style={{ backgroundColor: "color-mix(in srgb, var(--vcmv-gold) 12%, transparent)" }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-24 lg:py-36">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-12 md:py-10 md:py-12 lg:py-16 lg:py-24 lg:py-10 md:py-12 lg:py-16 md:py-12 md:py-10 md:py-12 lg:py-16 lg:py-24 lg:py-36">
 
         {/* Heading */}
         <motion.div

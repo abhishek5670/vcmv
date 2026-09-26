@@ -22,7 +22,7 @@ export default function VCMVNavbar() {
       <NavBody>
         {/* Logo */}
         <a
-          href="#"
+          href="/"
           className="relative z-20 flex items-center gap-2 px-2 py-1 no-underline"
           style={{ textDecoration: "none" }}
         >
@@ -31,8 +31,8 @@ export default function VCMVNavbar() {
             style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.1rem", letterSpacing: "0.01em" }}
           >
             VCMV <span className="font-normal text-white group-[.is-scrolled]:text-[var(--vcmv-gold)] transition-colors duration-300">&amp; Associates</span>
-            <span 
-              className="block text-[10px] tracking-[0.18em] uppercase font-normal text-white/80 group-[.is-scrolled]:text-[var(--vcmv-taupe)] transition-colors duration-300" 
+            <span
+              className="block text-[10px] tracking-[0.18em] uppercase font-normal text-white/80 group-[.is-scrolled]:text-[var(--vcmv-taupe)] transition-colors duration-300"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               LLP
@@ -44,9 +44,9 @@ export default function VCMVNavbar() {
         <NavItems items={navItems} />
 
         {/* CTA */}
-        <div className="flex items-center gap-3">
-          <NavbarButton 
-            variant="secondary" 
+        <div className="flex items-center gap-3 relative z-30">
+          <NavbarButton
+            variant="secondary"
             href="#contact"
             className="hidden lg:inline-block text-white group-[.is-scrolled]:hidden"
           >
@@ -62,7 +62,7 @@ export default function VCMVNavbar() {
       <MobileNav>
         <MobileNavHeader>
           {/* Logo */}
-          <a href="#" className="relative z-20 flex items-center gap-2 px-2">
+          <a href="/" className="relative z-20 flex items-center gap-2 px-2">
             <span
               className="text-base font-semibold text-white group-[.is-scrolled]:text-[var(--vcmv-charcoal)] transition-colors duration-300"
               style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.05rem" }}
@@ -70,10 +70,12 @@ export default function VCMVNavbar() {
               VCMV <span className="font-normal text-white group-[.is-scrolled]:text-[var(--vcmv-gold)] transition-colors duration-300">&amp; Associates LLP</span>
             </span>
           </a>
-          <MobileNavToggle
-            isOpen={isMobileMenuOpen}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          />
+          <div className="relative z-30">
+            <MobileNavToggle
+              isOpen={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
+          </div>
         </MobileNavHeader>
 
         <MobileNavMenu
@@ -95,7 +97,7 @@ export default function VCMVNavbar() {
             <NavbarButton
               onClick={() => setIsMobileMenuOpen(false)}
               variant="primary"
-              className="w-full text-center"
+              className="w-full text-center relative z-30"
             >
               Let&apos;s Talk
             </NavbarButton>

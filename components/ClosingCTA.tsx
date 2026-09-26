@@ -27,7 +27,7 @@ export default function ClosingCTA() {
       {/* Top gold border */}
       <div className="absolute top-0 left-0 right-0 h-px" style={{ backgroundColor: "color-mix(in srgb, var(--vcmv-gold) 30%, transparent)" }} />
 
-      <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-16 py-28 lg:py-40 text-center relative z-10">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-16 py-10 md:py-12 lg:py-16 md:py-12 md:py-10 md:py-12 lg:py-16 lg:py-20 lg:py-28 lg:py-40 text-center relative z-10">
 
         {/* Label */}
         <motion.div

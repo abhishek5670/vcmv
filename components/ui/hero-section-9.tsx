@@ -73,11 +73,11 @@ const HeroSection = ({
   return (
     <section
       className={cn(
-        "w-full overflow-hidden bg-background py-20 sm:py-28 lg:py-32",
+        "w-full overflow-hidden bg-background py-12 md:py-10 md:py-12 lg:py-16 lg:py-20 sm:py-10 md:py-12 lg:py-16 md:py-12 md:py-10 md:py-12 lg:py-16 lg:py-20 lg:py-28 lg:py-10 md:py-12 lg:py-16 md:py-12 md:py-10 md:py-12 lg:py-16 lg:py-20 lg:py-32",
         className,
       )}
     >
-      <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16 lg:px-12">
+      <div className="container mx-auto grid grid-cols-1 items-center gap-6 md:gap-8 lg:gap-12 px-6 lg:grid-cols-2 lg:gap-8 md:gap-6 md:gap-8 lg:gap-12 lg:gap-16 lg:px-12">
         {/* ── Left: Text ───────────────────────────────────────────── */}
         <motion.div
           className="flex flex-col items-center text-center lg:items-start lg:text-left"

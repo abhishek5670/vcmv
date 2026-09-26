@@ -1,12 +1,11 @@
 // VCMV site content — single source of truth for all copy
 
 export const navItems = [
-  { name: "About", link: "#about" },
-  { name: "Services", link: "#services" },
-  { name: "Expertise", link: "#expertise" },
-  { name: "Team", link: "#team" },
-  { name: "Insights", link: "#insights" },
-  // { name: "Contact", link: "#contact" },
+  { name: "About", link: "/about" },
+  { name: "Services", link: "/services" },
+  { name: "Team", link: "/team" },
+  { name: "Insights", link: "/insights" },
+  { name: "Contact", link: "/contact" },
 ];
 
 export const heroSection = {
