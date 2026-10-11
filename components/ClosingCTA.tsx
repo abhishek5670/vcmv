@@ -134,7 +134,7 @@ export default function ClosingCTA() {
             letterSpacing: "0.06em",
           }}
         >
-          VCMV &amp; Associates LLP · Chartered Accountants &amp; Advisors
+          V C M V &amp; Associates LLP · Chartered Accountants &amp; Advisors
         </motion.p>
       </div>
     </section>

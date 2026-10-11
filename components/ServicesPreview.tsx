@@ -108,18 +108,17 @@ export default function ServicesPreview() {
             >
               <Link
                 href="/services"
-                className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden rounded-full border border-color-mix(in srgb, var(--vcmv-gold) 30%, transparent) text-[var(--vcmv-gold)] transition-colors duration-300 hover:text-[var(--vcmv-charcoal)]"
+                className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden rounded-full border border-[var(--vcmv-gold)] bg-transparent text-[var(--vcmv-gold)] transition-colors duration-300 hover:text-[var(--vcmv-charcoal)]"
                 style={{
                   fontFamily: "var(--font-inter)",
                   fontSize: "0.85rem",
                   fontWeight: 600,
                   letterSpacing: "0.15em",
                   textTransform: "uppercase",
-                  borderColor: "color-mix(in srgb, var(--vcmv-gold) 30%, transparent)"
                 }}
               >
-                <span className="absolute inset-0 w-full h-full bg-[var(--vcmv-gold)] translate-y-[110%] group-hover:translate-y-0 transition-transform duration-500 ease-[0.19,1,0.22,1]"></span>
-                <span className="relative flex items-center gap-3">
+                <span className="absolute inset-0 w-full h-full bg-[var(--vcmv-gold)] translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-[0.19,1,0.22,1] pointer-events-none" />
+                <span className="relative z-10 flex items-center gap-3">
                   View All Services
                   <motion.span
                     animate={{ x: [0, 4, 0] }}

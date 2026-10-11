@@ -1,6 +1,31 @@
-// Team page and profile content
+export interface TeamMember {
+  id: string;
+  name: string;
+  designation: string;
+  focus: string;
+  image: string;
+  phone: string;
+  email: string;
+  education: string[];
+  icaiStatus: string;
+  experience: string;
+  previousExperience: string;
+  areasOfExpertise: string[];
+  industryExperience: string[];
+  summary: string;
+  shapeClass?: string;
+}
 
-export const teamPageContent = {
+export interface TeamPageContent {
+  hero: {
+    eyebrow: string;
+    heading: string;
+    description: string;
+  };
+  members: TeamMember[];
+}
+
+export const teamPageContent: TeamPageContent = {
   hero: {
     eyebrow: "OUR PEOPLE",
     heading: "Experienced Professionals.\nSpecialized Expertise.",
@@ -8,46 +33,7 @@ export const teamPageContent = {
       "Our partners bring experience across Big4, established CA practices and corporate environments, with focused expertise across tax, assurance, litigation and advisory.",
   },
   members: [
-    {
-      id: "vikram-r",
-      name: "Vikram R",
-      designation: "Partner",
-      focus: "International Tax & Transfer Pricing",
-      image: "/team/Vikram.jpg",
-      phone: "+91 98841 91001",
-      email: "vikram@vcmv.in",
-      education: [
-        "B.Com, R.K.M. Vivekananda College, Chennai",
-        "Fellow Member, Institute of Chartered Accountants of India (ICAI)",
-      ],
-      icaiStatus: "Fellow Member (FCA)",
-      experience:
-        "15 years of experience across International Tax, FEMA, Valuation, Transfer Pricing, Business Advisory, Advance Pricing Agreements (APA) and Mutual Agreement Procedures (MAP).",
-      previousExperience:
-        "Associate Director, International Tax & Transfer Pricing at B S R & Co. LLP (KPMG)",
-      areasOfExpertise: [
-        "International Tax",
-        "Transfer Pricing",
-        "FEMA & Foreign Exchange",
-        "Business Valuation",
-        "Advance Pricing Agreements (APA)",
-        "Mutual Agreement Procedure (MAP)",
-        "Business Advisory",
-        "Cross-border Structuring",
-      ],
-      industryExperience: [
-        "Automotive",
-        "NBFC",
-        "IT / ITeS",
-        "Electronics",
-        "FMCG",
-        "Engineering",
-        "Power",
-        "Logistics",
-      ],
-      summary:
-        "Vikram brings 15 years of specialized experience in International Tax and Transfer Pricing, having worked across Big4 and serving clients across a wide spectrum of industries. He advises on complex cross-border structures, treaty positions, transfer pricing policies, APA negotiations and MAP proceedings.",
-    },
+
     {
       id: "monish-gupta-d",
       name: "Monish Gupta D",
@@ -82,7 +68,7 @@ export const teamPageContent = {
       name: "Vinay Kumar Jain",
       designation: "Partner",
       focus: "Income Tax & Investment Advisory",
-      image: "/team/vinay.png",
+      image: "/team/vinay.jpeg",
       phone: "+91 98842 72661",
       email: "vinay@vcmv.in",
       education: [

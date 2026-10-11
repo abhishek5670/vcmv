@@ -150,7 +150,7 @@ export default function ServicePageLayout({
             className="absolute inset-0 w-full h-full object-cover filter grayscale-[10%] contrast-[1.1] z-0"
           />
           <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[var(--vcmv-charcoal)] to-transparent z-10 pointer-events-none" />
-          
+
           <div className="relative z-20 max-w-5xl mx-auto px-6 md:px-12 lg:px-20 text-center mt-10 md:mt-16">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -196,7 +196,7 @@ export default function ServicePageLayout({
         style={{ backgroundColor: "var(--vcmv-charcoal)" }}
       >
         <div className="max-w-[70rem] mx-auto px-6 md:px-12 lg:px-20 py-16 lg:py-24">
-          <div 
+          <div
             className="border-t"
             style={{ borderColor: "color-mix(in srgb, var(--vcmv-gold) 20%, transparent)" }}
           >
@@ -227,7 +227,7 @@ export default function ServicePageLayout({
             transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
             className="flex flex-col items-center"
           >
-            <h2 
+            <h2
               className="text-4xl md:text-5xl lg:text-5xl mb-10 text-[var(--vcmv-charcoal)]"
               style={{ fontFamily: "var(--font-cormorant)", lineHeight: 1.1, fontWeight: 600 }}
             >

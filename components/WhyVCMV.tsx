@@ -36,7 +36,7 @@ export default function WhyVCMV() {
               className="text-xs tracking-[0.22em] uppercase"
               style={{ color: "var(--vcmv-gold)", fontFamily: "var(--font-inter)", fontWeight: 500 }}
             >
-              Why VCMV
+              Why V C M V
             </span>
             <span className="inline-block h-px w-8" style={{ backgroundColor: "var(--vcmv-gold)" }} />
           </div>

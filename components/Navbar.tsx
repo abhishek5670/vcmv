@@ -30,7 +30,7 @@ export default function VCMVNavbar() {
             className="text-base font-semibold tracking-tight text-white group-[.is-scrolled]:text-[var(--vcmv-charcoal)] transition-colors duration-300"
             style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.1rem", letterSpacing: "0.01em" }}
           >
-            VCMV <span className="font-normal text-white group-[.is-scrolled]:text-[var(--vcmv-gold)] transition-colors duration-300">&amp; Associates</span>
+            V C M V <span className="font-normal text-white group-[.is-scrolled]:text-[var(--vcmv-gold)] transition-colors duration-300">&amp; Associates</span>
             <span
               className="block text-[10px] tracking-[0.18em] uppercase font-normal text-white/80 group-[.is-scrolled]:text-[var(--vcmv-taupe)] transition-colors duration-300"
               style={{ fontFamily: "var(--font-inter)" }}
@@ -67,7 +67,7 @@ export default function VCMVNavbar() {
               className="text-base font-semibold text-white group-[.is-scrolled]:text-[var(--vcmv-charcoal)] transition-colors duration-300"
               style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.05rem" }}
             >
-              VCMV <span className="font-normal text-white group-[.is-scrolled]:text-[var(--vcmv-gold)] transition-colors duration-300">&amp; Associates LLP</span>
+              V C M V <span className="font-normal text-white group-[.is-scrolled]:text-[var(--vcmv-gold)] transition-colors duration-300">&amp; Associates LLP</span>
             </span>
           </a>
           <div className="relative z-30">

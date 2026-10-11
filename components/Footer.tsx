@@ -76,7 +76,7 @@ export default function Footer() {
                 letterSpacing: "0.02em",
               }}
             >
-              VCMV{" "}
+              V C M V{" "}
               <span style={{ color: "var(--vcmv-gold)", fontWeight: 400 }}>
                 &amp; Associates LLP
               </span>
@@ -242,17 +242,42 @@ export default function Footer() {
             </Link>
           </div>
 
-          {/* Copyright */}
-          <p
-            className="text-xs uppercase tracking-[0.1em]"
-            style={{
-              fontFamily: "var(--font-inter)",
-              color: "color-mix(in srgb, var(--vcmv-cream) 25%, transparent)",
-              fontWeight: 300,
-            }}
-          >
-            &copy; {year} VCMV &amp; Associates LLP. All rights reserved.
-          </p>
+          {/* Copyright & Credit */}
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-xs tracking-[0.1em] uppercase">
+            <p
+              style={{
+                fontFamily: "var(--font-inter)",
+                color: "color-mix(in srgb, var(--vcmv-cream) 25%, transparent)",
+                fontWeight: 300,
+              }}
+            >
+              &copy; {year} V C M V &amp; Associates LLP. All rights reserved.
+            </p>
+            <span
+              className="hidden md:inline"
+              style={{ color: "color-mix(in srgb, var(--vcmv-gold) 20%, transparent)" }}
+            >
+              ·
+            </span>
+            <p
+              style={{
+                fontFamily: "var(--font-inter)",
+                color: "color-mix(in srgb, var(--vcmv-cream) 35%, transparent)",
+                fontWeight: 300,
+              }}
+            >
+              Created by{" "}
+              <a
+                href="https://zgendigital.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors duration-200 hover:text-[var(--vcmv-gold)] underline-offset-4 hover:underline"
+                style={{ color: "var(--vcmv-gold)", fontWeight: 500 }}
+              >
+                zgendigital.com
+              </a>
+            </p>
+          </div>
         </div>
       </div>
 
@@ -268,12 +293,12 @@ export default function Footer() {
             fontWeight: 700,
             fontSize: "clamp(5rem, 18vw, 18rem)",
             color: "color-mix(in srgb, var(--vcmv-gold) 7%, transparent)",
-            letterSpacing: "-0.02em",
+            letterSpacing: "0.08em",
             lineHeight: 0.9,
           }}
           aria-hidden="true"
         >
-          VCMV
+          V C M V
         </div>
 
         {/* Centred tagline over the wordmark */}

@@ -98,7 +98,7 @@ export default function AboutSection() {
     target: containerRef,
     offset: ["start end", "end start"],
   });
-  
+
   // Parallax effects for multiple elements
   const image1Y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
   const image2Y = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
@@ -112,14 +112,14 @@ export default function AboutSection() {
       style={{ backgroundColor: "var(--vcmv-ivory)" }}
     >
       {/* Background Animated Decor */}
-      <motion.div 
+      <motion.div
         className="absolute -right-[20%] top-[10%] w-[60%] h-[80%] rounded-full opacity-30 blur-3xl pointer-events-none"
         style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--vcmv-gold) 15%, transparent) 0%, transparent 70%)" }}
         animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.4, 0.2] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
-      
-      <div 
+
+      <div
         className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden 2xl:block opacity-5"
         aria-hidden="true"
         style={{
@@ -133,7 +133,7 @@ export default function AboutSection() {
           transform: "rotate(180deg)",
         }}
       >
-        VCMV
+        V C M V
       </div>
 
       <div className="max-w-[90rem] mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-16 lg:py-24 xl:py-40" ref={containerRef}>
@@ -195,10 +195,10 @@ export default function AboutSection() {
                   style={
                     chunk.em
                       ? {
-                          color: "var(--vcmv-gold)",
-                          fontStyle: "italic",
-                          fontWeight: 400,
-                        }
+                        color: "var(--vcmv-gold)",
+                        fontStyle: "italic",
+                        fontWeight: 400,
+                      }
                       : {}
                   }
                 >
@@ -224,17 +224,17 @@ export default function AboutSection() {
             >
               <Link
                 href="/about"
-                className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden rounded-full bg-[var(--vcmv-charcoal)] text-white"
+                className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden rounded-full bg-[var(--vcmv-charcoal)] text-[var(--vcmv-ivory)] transition-colors duration-300 hover:text-[var(--vcmv-charcoal)] border border-transparent hover:border-[var(--vcmv-gold)]"
                 style={{
                   fontFamily: "var(--font-inter)",
                   fontSize: "0.85rem",
-                  fontWeight: 500,
+                  fontWeight: 600,
                   letterSpacing: "0.15em",
                   textTransform: "uppercase",
                 }}
               >
-                <span className="absolute inset-0 w-full h-full bg-[var(--vcmv-gold)] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.19,1,0.22,1]"></span>
-                <span className="relative flex items-center gap-3">
+                <span className="absolute inset-0 w-full h-full bg-[var(--vcmv-gold)] translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-[0.19,1,0.22,1] pointer-events-none" />
+                <span className="relative z-10 flex items-center gap-3">
                   {aboutContent.cta}
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
@@ -250,18 +250,18 @@ export default function AboutSection() {
 
           {/* RIGHT: Dynamic Image Collage */}
           <div className="relative h-[600px] lg:h-[750px] w-full mt-10 lg:mt-0">
-            
+
             {/* Rotating Badge */}
-            <motion.div 
+            <motion.div
               style={{ rotate: rotateBadge, zIndex: 10 }}
               className="absolute -left-10 lg:-left-20 top-1/4 w-32 h-32 lg:w-40 lg:h-40 rounded-full border border-[var(--vcmv-gold)] flex items-center justify-center bg-[var(--vcmv-ivory)] shadow-2xl"
             >
               <div className="relative w-full h-full rounded-full flex items-center justify-center text-[var(--vcmv-charcoal)]">
                 <svg viewBox="0 0 100 100" className="w-full h-full animate-spin-slow" style={{ animationDuration: "20s" }}>
                   <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
-                  <text className="text-[10.5px] uppercase tracking-[0.2em] font-semibold" style={{ fontFamily: "var(--font-inter)", fill: "currentColor" }}>
-                    <textPath href="#circlePath" startOffset="0%">
-                      • VCMV & ASSOCIATES LLP • CHARTERED ACCOUNTANTS 
+                  <text className="text-[10px] uppercase font-semibold" style={{ fontFamily: "var(--font-inter)", fill: "currentColor" }}>
+                    <textPath href="#circlePath" startOffset="0%" textLength="224" lengthAdjust="spacing">
+                      • V C M V &amp; ASSOCIATES LLP •
                     </textPath>
                   </text>
                 </svg>
@@ -302,7 +302,7 @@ export default function AboutSection() {
                 className="filter grayscale-[30%] contrast-100"
               />
             </motion.div>
-            
+
             {/* Decorative Gold Frame */}
             <motion.div
               initial={{ opacity: 0 }}
