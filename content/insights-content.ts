@@ -5,7 +5,7 @@ export const insightsPageContent = {
     eyebrow: "INSIGHTS",
     heading: "Insights That Keep You Informed",
     description:
-      "Explore tax, regulatory and business insights from the VCMV team. Our articles are published with a clear date — always check the publication date before relying on rates, deadlines or legislation.",
+      "Explore tax, regulatory and business insights from the V C M V team. Our articles are published with a clear date — always check the publication date before relying on rates, deadlines or legislation.",
   },
   categories: [
     "All",

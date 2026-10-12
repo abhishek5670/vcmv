@@ -16,16 +16,16 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const member = teamPageContent.members.find((m) => m.id === id);
-  if (!member) return { title: "Team Member | VCMV" };
+  if (!member) return { title: "Team Member | V C M V" };
 
   return {
-    title: `${member.name} | ${member.focus} | VCMV`,
+    title: `${member.name} | ${member.focus} | V C M V`,
     description: member.summary,
     keywords: [
       member.name,
       member.focus,
       "Chartered Accountant Chennai",
-      "VCMV Associates LLP",
+      "V C M V Associates LLP",
       ...member.areasOfExpertise,
     ],
   };

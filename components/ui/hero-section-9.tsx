@@ -245,7 +245,7 @@ const HeroSection = ({
           >
             <img
               src={images[0]}
-              alt="VCMV advisory professionals"
+              alt="V C M V advisory professionals"
               className="h-full w-full object-cover"
             />
           </motion.div>

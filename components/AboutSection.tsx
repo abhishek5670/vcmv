@@ -282,7 +282,7 @@ export default function AboutSection() {
               <motion.img
                 style={{ y: image1Y, width: "100%", height: "120%", objectFit: "cover" }}
                 src={aboutContent.image}
-                alt="VCMV & Associates — professional advisory"
+                alt="V C M V & Associates — professional advisory"
                 className="filter grayscale-[15%] contrast-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--vcmv-charcoal)]/40 to-transparent mix-blend-multiply" />
@@ -298,7 +298,7 @@ export default function AboutSection() {
               <motion.img
                 style={{ y: image2Y, width: "100%", height: "130%", objectFit: "cover" }}
                 src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80&fit=crop"
-                alt="VCMV Detail"
+                alt="V C M V Detail"
                 className="filter grayscale-[30%] contrast-100"
               />
             </motion.div>

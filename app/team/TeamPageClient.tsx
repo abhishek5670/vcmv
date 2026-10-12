@@ -51,7 +51,7 @@ export default function TeamPageClient() {
                 >
                   <Image
                     src={member.image}
-                    alt={`${member.name}, ${member.designation} at VCMV & Associates LLP`}
+                    alt={`${member.name}, ${member.designation} at V C M V & Associates LLP`}
                     fill
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"

@@ -12,6 +12,11 @@ const primaryServices = [
       "Independent audit of financial statements with an approach grounded in understanding the business, its industry, and its risk profile. Our audit process is rigorous and transparent.",
   },
   {
+    title: "Inventory Audit",
+    description:
+      "Independent physical verification, reconciliation, valuation assessment, and shrinkage review of inventory and stock across warehouses, retail outlets, and manufacturing sites.",
+  },
+  {
     title: "Tax Audit",
     description:
       "Comprehensive support for reviewing tax-related financial information and applicable tax audit requirements under the Income Tax Act, ensuring complete and accurate disclosure.",
@@ -94,7 +99,7 @@ export default function AssuranceClient() {
           }}
         />
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-12 md:py-10 md:py-12 lg:py-16 lg:py-24 lg:py-10 md:py-12 lg:py-16 md:py-12 md:py-10 md:py-12 lg:py-16 lg:py-20 lg:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
             {primaryServices.map((service, i) => (
               <motion.div
                 key={service.title}
@@ -103,7 +108,7 @@ export default function AssuranceClient() {
                 transition={{ duration: 0.65, delay: i * 0.12 }}
                 className="relative"
                 style={{
-                  padding: "3rem 2.5rem",
+                  padding: "3rem 2rem",
                   borderLeft:
                     i > 0
                       ? "1px solid color-mix(in srgb, var(--vcmv-gold) 18%, transparent)"

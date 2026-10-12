@@ -217,6 +217,30 @@ export default function Footer() {
             </Link>
           </div>
 
+          {/* Office Timing */}
+          <div className="mb-10">
+            <p
+              className="uppercase tracking-[0.15em] mb-1.5 text-[0.68rem]"
+              style={{
+                fontFamily: "var(--font-inter)",
+                color: "var(--vcmv-gold)",
+                fontWeight: 500,
+              }}
+            >
+              Office Hours
+            </p>
+            <p
+              className="text-xs tracking-wider"
+              style={{
+                fontFamily: "var(--font-inter)",
+                color: "color-mix(in srgb, var(--vcmv-cream) 60%, transparent)",
+                fontWeight: 300,
+              }}
+            >
+              Monday – Friday: 9:30 AM – 6:30 PM IST
+            </p>
+          </div>
+
           {/* Email */}
           <div className="mb-10">
             <Link

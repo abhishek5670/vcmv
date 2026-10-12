@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import InsightsPageClient from "./InsightsPageClient";
 
 export const metadata: Metadata = {
-  title: "Tax & Regulatory Insights | VCMV",
+  title: "Tax & Regulatory Insights | V C M V",
   description:
-    "Tax updates, GST insights, international tax and regulatory articles from VCMV & Associates LLP. Stay informed on developments affecting your business.",
+    "Tax updates, GST insights, international tax and regulatory articles from V C M V & Associates LLP. Stay informed on developments affecting your business.",
   keywords: [
     "Tax Insights India",
     "GST Updates",

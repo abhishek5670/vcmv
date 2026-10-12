@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import GSTClient from "./GSTClient";
 
 export const metadata: Metadata = {
-  title: "GST & Indirect Tax Advisory Services | VCMV",
+  title: "GST & Indirect Tax Advisory Services | V C M V",
   description:
-    "GST advisory, compliance, refund assistance, SVB registration and indirect tax litigation services in India. VCMV & Associates LLP, Chennai.",
+    "GST advisory, compliance, refund assistance, SVB registration and indirect tax litigation services in India. V C M V & Associates LLP, Chennai.",
   keywords: [
     "GST Advisory Chennai",
     "GST Compliance",

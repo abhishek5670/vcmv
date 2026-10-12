@@ -306,7 +306,7 @@ export default function LitigationClient() {
                 }}
               >
                 Where matters require representation before High Courts or
-                specialized tax forums, VCMV coordinates with experienced senior
+                specialized tax forums, V C M V coordinates with experienced senior
                 counsels and tax lawyers to ensure appropriate legal
                 representation alongside our technical support.
               </p>

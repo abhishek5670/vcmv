@@ -407,7 +407,7 @@ export default function ContactPageClient() {
                         fontWeight: 300,
                       }}
                     >
-                      VCMV & Associates LLP
+                      V C M V & Associates LLP
                       <br />
                       Willingdon Crescent, 4th Floor,
                       <br />
@@ -505,7 +505,7 @@ export default function ContactPageClient() {
                 </div>
                 <div className="space-y-2">
                   {[
-                    { day: "Monday – Friday", time: "9:00 AM – 6:00 PM IST" },
+                    { day: "Monday – Friday", time: "9:30 AM – 6:30 PM IST" },
                     { day: "Saturday", time: "By appointment" },
                     { day: "Sunday", time: "Closed" },
                   ].map(({ day, time }) => (
@@ -626,7 +626,7 @@ export default function ContactPageClient() {
             style={{ paddingTop: "40%", minHeight: "300px" }}
           >
             <iframe
-              title="VCMV & Associates LLP Office Location"
+              title="V C M V & Associates LLP Office Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5721580068797!2d80.24541731482295!3d13.063965990791063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266e4d8f7f7f7%3A0x0!2sNungambakkam%2C%20Chennai%2C%20Tamil%20Nadu%20600034!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               className="absolute inset-0 w-full h-full"
               style={{

@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import DirectTaxClient from "./DirectTaxClient";
 
 export const metadata: Metadata = {
-  title: "Direct Tax Advisory & Corporate Tax Services | VCMV",
+  title: "Direct Tax Advisory & Corporate Tax Services | V C M V",
   description:
-    "Corporate tax planning, transaction tax advisory, withholding tax compliance and return filing for businesses in India. Direct Tax services by VCMV & Associates LLP, Chennai.",
+    "Corporate tax planning, transaction tax advisory, withholding tax compliance and return filing for businesses in India. Direct Tax services by V C M V & Associates LLP, Chennai.",
   keywords: [
     "Direct Tax Advisory Chennai",
     "Corporate Tax",

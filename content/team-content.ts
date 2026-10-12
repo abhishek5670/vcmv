@@ -39,7 +39,7 @@ export const teamPageContent: TeamPageContent = {
       name: "Monish Gupta D",
       designation: "Partner",
       focus: "GST & Assurance",
-      image: "/team/monish.png",
+      image: "/team/monish.jpeg",
       phone: "+91 99628 69428",
       email: "monish@vcmv.in",
       education: [
@@ -74,6 +74,8 @@ export const teamPageContent: TeamPageContent = {
       education: [
         "B.Com, University of Madras",
         "Fellow Member, Institute of Chartered Accountants of India (ICAI)",
+        "Forensic Accounting and Fraud Detection (FAFD, ICAI)",
+        "Certificate Course on Concurrent Audit of Banks (CCAB, ICAI)",
       ],
       icaiStatus: "Fellow Member (FCA)",
       experience:

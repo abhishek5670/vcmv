@@ -4,14 +4,14 @@ import Footer from "@/components/Footer";
 import ContactPageClient from "./ContactPageClient";
 
 export const metadata: Metadata = {
-  title: "Contact VCMV & Associates LLP | Chennai",
+  title: "Contact V C M V & Associates LLP | Chennai",
   description:
-    "Get in touch with VCMV & Associates LLP for tax advisory, assurance, litigation or business advisory requirements. Office in Nungambakkam, Chennai.",
+    "Get in touch with V C M V & Associates LLP for tax advisory, assurance, litigation or business advisory requirements. Office in Nungambakkam, Chennai.",
   keywords: [
-    "Contact VCMV Associates",
+    "Contact V C M V Associates",
     "CA Firm Chennai Contact",
     "Tax Advisory Contact",
-    "VCMV Chennai Office",
+    "V C M V Chennai Office",
     "Nungambakkam CA",
   ],
 };

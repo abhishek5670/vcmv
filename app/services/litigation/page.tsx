@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import LitigationClient from "./LitigationClient";
 
 export const metadata: Metadata = {
-  title: "Tax Litigation & Dispute Resolution Services | VCMV",
+  title: "Tax Litigation & Dispute Resolution Services | V C M V",
   description:
-    "Tax litigation, appeals and dispute resolution across income tax, GST, customs, central excise and service tax forums. VCMV & Associates LLP, Chennai.",
+    "Tax litigation, appeals and dispute resolution across income tax, GST, customs, central excise and service tax forums. V C M V & Associates LLP, Chennai.",
   keywords: [
     "Tax Litigation India",
     "Income Tax Appeals",

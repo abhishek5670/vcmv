@@ -95,7 +95,7 @@ export default function TeamMemberClient({ member }: Props) {
               >
                 <Image
                   src={member.image}
-                  alt={`${member.name} — ${member.designation}, VCMV & Associates LLP`}
+                  alt={`${member.name} — ${member.designation}, V C M V & Associates LLP`}
                   fill
                   className="object-cover object-top"
                   priority

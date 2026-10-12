@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import TeamPageClient from "./TeamPageClient";
 
 export const metadata: Metadata = {
-  title: "Chartered Accountants & Tax Advisors | VCMV Team",
+  title: "Chartered Accountants & Tax Advisors | V C M V Team",
   description:
-    "Meet the partners of VCMV & Associates LLP — experienced Chartered Accountants specializing in international tax, transfer pricing, GST, assurance, litigation and advisory in Chennai.",
+    "Meet the partners of V C M V & Associates LLP — experienced Chartered Accountants specializing in international tax, transfer pricing, GST, assurance, litigation and advisory in Chennai.",
   keywords: [
     "CA Firm Chennai Partners",
     "Chartered Accountants Chennai",

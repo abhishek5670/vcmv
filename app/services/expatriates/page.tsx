@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import ExpatriatesClient from "./ExpatriatesClient";
 
 export const metadata: Metadata = {
-  title: "Expatriate Tax Services India | VCMV & Associates LLP",
+  title: "Expatriate Tax Services India | V C M V & Associates LLP",
   description:
     "Tax and regulatory support for expatriates and businesses managing international employee assignments in India. PAN, FRRO, visa, withholding and tax equalization services.",
   keywords: [

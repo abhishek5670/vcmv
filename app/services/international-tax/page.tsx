@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import IntlTaxClient from "./IntlTaxClient";
 
 export const metadata: Metadata = {
-  title: "International Tax Advisory Services in India | VCMV",
+  title: "International Tax Advisory Services in India | V C M V",
   description:
-    "Cross-border tax structuring, treaty advisory and international tax planning for businesses investing in India or expanding globally. VCMV & Associates LLP, Chennai.",
+    "Cross-border tax structuring, treaty advisory and international tax planning for businesses investing in India or expanding globally. V C M V & Associates LLP, Chennai.",
   keywords: [
     "International Tax Advisory India",
     "Cross-border Tax",

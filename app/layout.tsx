@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "VCMV & Associates LLP — CA, Tax, Assurance & Business Advisory",
+  title: "V C M V & Associates LLP — CA, Tax, Assurance & Business Advisory",
   description:
-    "VCMV & Associates LLP is a multidisciplinary firm of Chartered Accountants specialising in Direct Tax, International Tax, Transfer Pricing, GST, Assurance and Business Advisory.",
+    "V C M V & Associates LLP is a multidisciplinary firm of Chartered Accountants specialising in Direct Tax, International Tax, Transfer Pricing, GST, Assurance and Business Advisory.",
   keywords: [
     "Chartered Accountants",
     "Tax Advisory",
@@ -13,10 +13,10 @@ export const metadata: Metadata = {
     "GST",
     "Assurance",
     "Business Advisory",
-    "VCMV",
+    "V C M V",
   ],
   openGraph: {
-    title: "VCMV & Associates LLP",
+    title: "V C M V & Associates LLP",
     description:
       "Professional expertise. Practical thinking. Lasting value. CA, Tax, Assurance & Business Advisory.",
     type: "website",

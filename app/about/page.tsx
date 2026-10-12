@@ -4,11 +4,11 @@ import Footer from "@/components/Footer";
 import AboutPageClient from "./AboutPageClient";
 
 export const metadata: Metadata = {
-  title: "About VCMV & Associates LLP | Chartered Accountants",
+  title: "About V C M V & Associates LLP | Chartered Accountants",
   description:
-    "VCMV & Associates LLP is a modern CA firm founded by Big4 alumni and experienced professionals specializing in tax, assurance, litigation and business advisory in Chennai.",
+    "V C M V & Associates LLP is a modern CA firm founded by Big4 alumni and experienced professionals specializing in tax, assurance, litigation and business advisory in Chennai.",
   keywords: [
-    "About VCMV",
+    "About V C M V",
     "Chartered Accountants Chennai",
     "CA Firm Chennai",
     "Big4 Alumni",

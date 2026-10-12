@@ -2,16 +2,16 @@
 
 export const aboutPageContent = {
   hero: {
-    eyebrow: "ABOUT VCMV",
+    eyebrow: "ABOUT V C M V",
     heading: "Built on expertise.\nDriven by value.",
     description:
-      "VCMV & Associates LLP brings together specialized Chartered Accountants with deep experience across tax, assurance, litigation and business advisory—built to serve businesses that demand more than just compliance.",
+      "V C M V & Associates LLP brings together specialized Chartered Accountants with deep experience across tax, assurance, litigation and business advisory—built to serve businesses that demand more than just compliance.",
   },
   story: {
     heading: "A modern professional firm with deep expertise.",
     paragraphs: [
-      "VCMV & Associates LLP is a Limited Liability Partnership founded by professionals with experience across Big4 and reputed Chennai firms. The firm brings together specialists in Direct Tax, International Tax, Transfer Pricing, GST and Regulatory matters, Litigation, Advisory and Assurance.",
-      "VCMV & Associates was converted from a partnership firm into an LLP with effect from 17 January 2019, pursuant to approval from the Ministry of Corporate Affairs and the Institute of Chartered Accountants of India.",
+      "V C M V & Associates LLP is a Limited Liability Partnership founded by professionals with experience across Big4 and reputed Chennai firms. The firm brings together specialists in Direct Tax, International Tax, Transfer Pricing, GST and Regulatory matters, Litigation, Advisory and Assurance.",
+      "V C M V & Associates was converted from a partnership firm into an LLP with effect from 17 January 2019, pursuant to approval from the Ministry of Corporate Affairs and the Institute of Chartered Accountants of India.",
     ],
     stats: [
       { value: "4", label: "Partners" },

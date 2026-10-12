@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import ValuationClient from "./ValuationClient";
 
 export const metadata: Metadata = {
-  title: "Business & Equity Valuation Services | VCMV",
+  title: "Business & Equity Valuation Services | V C M V",
   description:
     "Independent business valuation for transactions, regulatory compliance, financial reporting and strategic decisions. FEMA, Companies Act and income tax valuation services.",
   keywords: [
