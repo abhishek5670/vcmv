@@ -35,11 +35,31 @@ export default function ContactPageClient() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, this would send to an API endpoint
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Submission failed");
+      setSubmitted(true);
+      // Open WhatsApp in new tab with the pre-filled message
+      if (data.whatsappUrl) {
+        window.open(data.whatsappUrl, "_blank", "noopener,noreferrer");
+      }
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputStyle: React.CSSProperties = {
@@ -329,34 +349,54 @@ export default function ContactPageClient() {
                   </div>
 
                   {/* Submit */}
-                  <motion.button
-                    type="submit"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full sm:w-auto px-10 py-4 text-xs tracking-widest uppercase transition-all duration-200"
-                    style={{
-                      fontFamily: "var(--font-inter)",
-                      fontWeight: 500,
-                      color: "var(--vcmv-charcoal)",
-                      backgroundColor: "var(--vcmv-gold)",
-                      border: "none",
-                      cursor: "pointer",
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.backgroundColor =
-                        "var(--vcmv-charcoal)";
-                      (e.currentTarget as HTMLElement).style.color =
-                        "var(--vcmv-gold)";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.backgroundColor =
-                        "var(--vcmv-gold)";
-                      (e.currentTarget as HTMLElement).style.color =
-                        "var(--vcmv-charcoal)";
-                    }}
-                  >
-                    Send Enquiry →
-                  </motion.button>
+                  <div className="space-y-3">
+                    <motion.button
+                      type="submit"
+                      disabled={loading}
+                      whileHover={loading ? {} : { scale: 1.02 }}
+                      whileTap={loading ? {} : { scale: 0.98 }}
+                      className="w-full sm:w-auto px-10 py-4 text-xs tracking-widest uppercase transition-all duration-200"
+                      style={{
+                        fontFamily: "var(--font-inter)",
+                        fontWeight: 500,
+                        color: "var(--vcmv-charcoal)",
+                        backgroundColor: loading ? "color-mix(in srgb, var(--vcmv-gold) 60%, transparent)" : "var(--vcmv-gold)",
+                        border: "none",
+                        cursor: loading ? "not-allowed" : "pointer",
+                        opacity: loading ? 0.7 : 1,
+                      }}
+                      onMouseEnter={(e) => {
+                        if (!loading) {
+                          (e.currentTarget as HTMLElement).style.backgroundColor =
+                            "var(--vcmv-charcoal)";
+                          (e.currentTarget as HTMLElement).style.color =
+                            "var(--vcmv-gold)";
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (!loading) {
+                          (e.currentTarget as HTMLElement).style.backgroundColor =
+                            "var(--vcmv-gold)";
+                          (e.currentTarget as HTMLElement).style.color =
+                            "var(--vcmv-charcoal)";
+                        }
+                      }}
+                    >
+                      {loading ? "Sending…" : "Send Enquiry →"}
+                    </motion.button>
+                    {error && (
+                      <p
+                        style={{
+                          fontFamily: "var(--font-inter)",
+                          fontSize: "0.82rem",
+                          color: "#c0392b",
+                          fontWeight: 400,
+                        }}
+                      >
+                        {error}
+                      </p>
+                    )}
+                  </div>
                 </form>
               )}
             </motion.div>

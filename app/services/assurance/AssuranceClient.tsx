@@ -10,21 +10,25 @@ const primaryServices = [
     title: "Statutory Audit",
     description:
       "Independent audit of financial statements with an approach grounded in understanding the business, its industry, and its risk profile. Our audit process is rigorous and transparent.",
+    href: undefined as string | undefined,
   },
   {
     title: "Inventory Audit",
     description:
       "Independent physical verification, reconciliation, valuation assessment, and shrinkage review of inventory and stock across warehouses, retail outlets, and manufacturing sites.",
+    href: "/services/inventory-audit",
   },
   {
     title: "Tax Audit",
     description:
       "Comprehensive support for reviewing tax-related financial information and applicable tax audit requirements under the Income Tax Act, ensuring complete and accurate disclosure.",
+    href: undefined as string | undefined,
   },
   {
     title: "IFRS & Financial Reporting",
     description:
       "Support with IFRS transition, Ind AS adoption, accounting policy changes, and financial reporting requirements to ensure your financials meet applicable standards.",
+    href: undefined as string | undefined,
   },
 ];
 
@@ -144,6 +148,20 @@ export default function AssuranceClient() {
                 >
                   {service.description}
                 </p>
+                {service.href && (
+                  <Link
+                    href={service.href}
+                    className="inline-flex items-center gap-2 mt-5 text-xs tracking-widest uppercase transition-colors duration-200"
+                    style={{
+                      fontFamily: "var(--font-inter)",
+                      fontWeight: 500,
+                      color: "var(--vcmv-gold)",
+                      textDecoration: "none",
+                    }}
+                  >
+                    Explore →
+                  </Link>
+                )}
               </motion.div>
             ))}
           </div>

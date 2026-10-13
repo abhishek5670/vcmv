@@ -355,10 +355,14 @@ export default function Footer() {
           CA · Tax · Assurance · Business Advisory
         </p>
         <div className="flex items-center gap-4">
-          {["Privacy Policy", "Terms of Use", "Disclaimer"].map((item) => (
+          {[
+            { label: "Privacy Policy", href: "/privacy-policy" },
+            { label: "Terms of Use", href: "#" },
+            { label: "Disclaimer", href: "#" },
+          ].map(({ label, href }) => (
             <Link
-              key={item}
-              href="#"
+              key={label}
+              href={href}
               className="text-xs tracking-wide transition-colors duration-200"
               style={{
                 fontFamily: "var(--font-inter)",
@@ -375,7 +379,7 @@ export default function Footer() {
                   "color-mix(in srgb, var(--vcmv-cream) 20%, transparent)";
               }}
             >
-              {item}
+              {label}
             </Link>
           ))}
         </div>
