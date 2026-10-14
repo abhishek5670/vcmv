@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 // Lucide dropped brand icons — using inline SVGs instead
 const LinkedInIcon = () => (
@@ -241,29 +241,56 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Email */}
-          <div className="mb-10">
-            <Link
-              href="mailto:contact@vcmvassociates.com"
-              className="inline-flex items-center gap-2 transition-colors duration-200"
-              style={{
-                fontFamily: "var(--font-inter)",
-                fontSize: "0.8rem",
-                color: "color-mix(in srgb, var(--vcmv-cream) 60%, transparent)",
-                textDecoration: "none",
-                letterSpacing: "0.04em",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.color = "var(--vcmv-ivory)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.color =
-                  "color-mix(in srgb, var(--vcmv-cream) 60%, transparent)";
-              }}
-            >
-              <Mail className="h-3.5 w-3.5 flex-shrink-0" style={{ color: "var(--vcmv-gold)" }} />
-              contact@vcmvassociates.com
-            </Link>
+          {/* Contact info: Phone/WhatsApp & Email */}
+          <div className="mb-10 space-y-3">
+            <div>
+              <a
+                href="https://wa.me/919962869428"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 transition-colors duration-200"
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontSize: "0.8rem",
+                  color: "color-mix(in srgb, var(--vcmv-cream) 60%, transparent)",
+                  textDecoration: "none",
+                  letterSpacing: "0.04em",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.color = "var(--vcmv-ivory)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.color =
+                    "color-mix(in srgb, var(--vcmv-cream) 60%, transparent)";
+                }}
+              >
+                <Phone className="h-3.5 w-3.5 flex-shrink-0" style={{ color: "var(--vcmv-gold)" }} />
+                +91 99628 69428 (WhatsApp)
+              </a>
+            </div>
+            <div>
+              <Link
+                href="mailto:monish@vcmv.in"
+                className="inline-flex items-center gap-2 transition-colors duration-200"
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontSize: "0.8rem",
+                  color: "color-mix(in srgb, var(--vcmv-cream) 60%, transparent)",
+                  textDecoration: "none",
+                  letterSpacing: "0.04em",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.color = "var(--vcmv-ivory)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.color =
+                    "color-mix(in srgb, var(--vcmv-cream) 60%, transparent)";
+                }}
+              >
+                <Mail className="h-3.5 w-3.5 flex-shrink-0" style={{ color: "var(--vcmv-gold)" }} />
+                monish@vcmv.in
+              </Link>
+            </div>
           </div>
 
           {/* Copyright & Credit */}

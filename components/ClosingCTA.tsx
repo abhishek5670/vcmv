@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 import { closingCTA } from "@/content/site-content";
 
 export default function ClosingCTA() {
@@ -96,7 +97,7 @@ export default function ClosingCTA() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.55, delay: 0.38 }}
         >
-          <a
+          <Link
             href={closingCTA.ctaHref}
             className="inline-flex items-center justify-center transition-all duration-250 group"
             style={{
@@ -118,7 +119,7 @@ export default function ClosingCTA() {
             }}
           >
             {closingCTA.cta}
-          </a>
+          </Link>
         </motion.div>
 
         {/* Footer note */}

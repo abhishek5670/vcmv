@@ -35,6 +35,7 @@ export default function ContactPageClient() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submittedWhatsappUrl, setSubmittedWhatsappUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -42,21 +43,44 @@ export default function ContactPageClient() {
     e.preventDefault();
     setLoading(true);
     setError("");
+
+    // Build WhatsApp message formatted for +91 99628 69428
+    const whatsappMessage = encodeURIComponent(
+      `*New Enquiry from V C M V Website*\n\n` +
+        `*Name:* ${formState.name}\n` +
+        `*Company:* ${formState.company || "—"}\n` +
+        `*Email:* ${formState.email}\n` +
+        `*Phone:* ${formState.phone || "—"}\n` +
+        `*Service:* ${formState.service || "—"}\n\n` +
+        `*Message:*\n${formState.message}`
+    );
+    const directWhatsappUrl = `https://wa.me/919962869428?text=${whatsappMessage}`;
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formState),
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Submission failed");
+      const data = await res.json().catch(() => ({}));
+      const targetUrl = data.whatsappUrl || directWhatsappUrl;
+      setSubmittedWhatsappUrl(targetUrl);
       setSubmitted(true);
-      // Open WhatsApp in new tab with the pre-filled message
-      if (data.whatsappUrl) {
-        window.open(data.whatsappUrl, "_blank", "noopener,noreferrer");
+      // Attempt to open WhatsApp directly
+      try {
+        window.open(targetUrl, "_blank", "noopener,noreferrer");
+      } catch {
+        // Handled by the fallback button on screen
       }
-    } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } catch {
+      // Even if API route has a network glitch, still direct message to WhatsApp
+      setSubmittedWhatsappUrl(directWhatsappUrl);
+      setSubmitted(true);
+      try {
+        window.open(directWhatsappUrl, "_blank", "noopener,noreferrer");
+      } catch {
+        // Handled by the fallback button on screen
+      }
     } finally {
       setLoading(false);
     }
@@ -150,33 +174,92 @@ export default function ContactPageClient() {
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="py-10 md:py-12 lg:py-16 text-center"
+                  className="py-10 md:py-12 lg:py-16 px-6 md:px-10 text-center"
                   style={{
                     border:
-                      "1px solid color-mix(in srgb, var(--vcmv-gold) 30%, transparent)",
+                      "1px solid color-mix(in srgb, var(--vcmv-gold) 35%, transparent)",
+                    backgroundColor:
+                      "color-mix(in srgb, var(--vcmv-gold) 6%, transparent)",
                   }}
                 >
                   <p
                     className="mb-3"
                     style={{
                       fontFamily: "var(--font-cormorant)",
-                      fontSize: "1.8rem",
+                      fontSize: "2rem",
                       fontWeight: 600,
                       color: "var(--vcmv-charcoal)",
                     }}
                   >
-                    Thank you.
+                    Thank you, {formState.name || "for reaching out"}.
                   </p>
                   <p
+                    className="mb-6 max-w-md mx-auto"
                     style={{
                       fontFamily: "var(--font-inter)",
-                      fontSize: "0.9rem",
+                      fontSize: "0.92rem",
                       color: "var(--vcmv-taupe)",
                       fontWeight: 300,
+                      lineHeight: 1.6,
                     }}
                   >
-                    We'll be in touch within one business day.
+                    Your enquiry has been formatted for WhatsApp (+91 99628 69428). If the chat did not open automatically, click the button below to send your message directly.
                   </p>
+
+                  {submittedWhatsappUrl && (
+                    <div className="mb-6">
+                      <a
+                        href={submittedWhatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 px-8 py-4 text-xs tracking-widest uppercase transition-all duration-200 shadow-md hover:shadow-lg"
+                        style={{
+                          backgroundColor: "#25D366",
+                          color: "#ffffff",
+                          fontFamily: "var(--font-inter)",
+                          fontWeight: 600,
+                          textDecoration: "none",
+                          borderRadius: "4px",
+                        }}
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          className="w-4 h-4 flex-shrink-0"
+                        >
+                          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        Send via WhatsApp (+91 99628 69428) →
+                      </a>
+                    </div>
+                  )}
+
+                  <div className="pt-4 border-t border-[color-mix(in_srgb,var(--vcmv-gold)_25%,transparent)]">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSubmitted(false);
+                        setSubmittedWhatsappUrl("");
+                        setFormState({
+                          name: "",
+                          company: "",
+                          email: "",
+                          phone: "",
+                          service: "",
+                          message: "",
+                        });
+                      }}
+                      className="text-xs tracking-wider uppercase underline underline-offset-4 cursor-pointer transition-colors duration-200"
+                      style={{
+                        color: "var(--vcmv-gold)",
+                        fontFamily: "var(--font-inter)",
+                        background: "none",
+                        border: "none",
+                      }}
+                    >
+                      Send Another Message
+                    </button>
+                  </div>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">

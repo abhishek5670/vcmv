@@ -45,14 +45,7 @@ export default function VCMVNavbar() {
 
         {/* CTA */}
         <div className="flex items-center gap-3 relative z-30">
-          {/* <NavbarButton
-            variant="secondary"
-            href="#contact"
-            className="hidden lg:inline-block text-white group-[.is-scrolled]:hidden"
-          >
-            Contact
-          </NavbarButton> */}
-          <NavbarButton variant="primary" href="#contact" >
+          <NavbarButton variant="primary" href="/contact">
             Let&apos;s Talk
           </NavbarButton>
         </div>
@@ -95,6 +88,7 @@ export default function VCMVNavbar() {
           ))}
           <div className="flex w-full flex-col gap-3 pt-2 border-t" style={{ borderColor: "color-mix(in srgb, var(--vcmv-gold) 20%, transparent)" }}>
             <NavbarButton
+              href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
               variant="primary"
               className="w-full text-center relative z-30"

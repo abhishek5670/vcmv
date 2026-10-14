@@ -136,5 +136,5 @@ export const closingCTA = {
   heading: "Complex challenge?\nLet's find the right way forward.",
   body: "Talk to our team about your tax, advisory or business requirements.",
   cta: "Start a Conversation →",
-  ctaHref: "#contact",
+  ctaHref: "/contact",
 };
