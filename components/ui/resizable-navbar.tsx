@@ -92,7 +92,7 @@ import { GlassEffect } from "./liquid-glass";
 export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   const pathname = usePathname();
   const isHome = pathname === "/";
-  
+
   return (
     <motion.div
       animate={{
@@ -116,9 +116,9 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         disabled={isHome && !visible}
         className="w-full transition-all duration-500 rounded-full"
         style={{
-          backgroundColor: visible 
-            ? "color-mix(in srgb, var(--vcmv-ivory) 80%, transparent)" 
-            : isHome 
+          backgroundColor: visible
+            ? "color-mix(in srgb, var(--vcmv-ivory) 80%, transparent)"
+            : isHome
               ? "transparent"
               : "color-mix(in srgb, var(--vcmv-charcoal) 40%, transparent)",
           transition: "background-color 0.3s ease",
@@ -173,7 +173,7 @@ export const NavItems = ({ items, className, onItemClick, visible }: NavItemsPro
 export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
   const pathname = usePathname();
   const isHome = pathname === "/";
-  
+
   return (
     <motion.div
       animate={{
@@ -196,9 +196,9 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         disabled={isHome && !visible}
         className="w-full transition-all duration-500 rounded-[12px]"
         style={{
-          backgroundColor: visible 
-            ? "color-mix(in srgb, var(--vcmv-ivory) 80%, transparent)" 
-            : isHome 
+          backgroundColor: visible
+            ? "color-mix(in srgb, var(--vcmv-ivory) 80%, transparent)"
+            : isHome
               ? "transparent"
               : "color-mix(in srgb, var(--vcmv-charcoal) 40%, transparent)",
           transition: "background-color 0.3s ease",

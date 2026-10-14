@@ -45,14 +45,14 @@ export default function VCMVNavbar() {
 
         {/* CTA */}
         <div className="flex items-center gap-3 relative z-30">
-          <NavbarButton
+          {/* <NavbarButton
             variant="secondary"
             href="#contact"
             className="hidden lg:inline-block text-white group-[.is-scrolled]:hidden"
           >
             Contact
-          </NavbarButton>
-          <NavbarButton variant="primary" href="#contact">
+          </NavbarButton> */}
+          <NavbarButton variant="primary" href="#contact" >
             Let&apos;s Talk
           </NavbarButton>
         </div>
