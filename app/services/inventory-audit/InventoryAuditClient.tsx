@@ -75,8 +75,8 @@ export default function InventoryAuditClient() {
     <>
       <PageHero
         eyebrow="ASSURANCE"
-        heading={"Inventory Audit\n& Stock Verification"}
-        description="Independent, systematic verification of your inventory — from physical count and reconciliation to valuation review and process controls — giving management and stakeholders reliable assurance on stock."
+        heading={"Stock Audit &\nInventory Verification Services"}
+        description="Independent, systematic verification of your stock and inventory — from on-site physical count and bank consortium audits to ERP reconciliation, valuation review and process controls."
       />
 
       {/* Scope of Services */}

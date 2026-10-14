@@ -8,13 +8,15 @@ const servicesSlugs = [
   "international-tax",
   "transfer-pricing",
   "gst-indirect-tax",
-  "expatriates",
+  "ipo-advisory",
+  "forensic-audit",
+  "india-entry",
+  "inventory-audit",
   "assurance",
   "litigation",
   "valuation",
   "mergers-acquisitions",
-  "india-entry",
-  "inventory-audit",
+  "expatriates",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

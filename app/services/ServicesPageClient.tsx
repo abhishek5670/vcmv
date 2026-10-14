@@ -16,6 +16,9 @@ import {
   Handshake,
   Building2,
   Briefcase,
+  Search,
+  Landmark,
+  Boxes,
 } from "lucide-react";
 import Link from "next/link";
 import type { LucideProps } from "lucide-react";
@@ -32,6 +35,9 @@ const iconMap: Record<string, React.ComponentType<LucideProps>> = {
   Handshake,
   Building2,
   Briefcase,
+  Search,
+  Landmark,
+  Boxes,
 };
 
 export default function ServicesPageClient() {
@@ -72,7 +78,7 @@ export default function ServicesPageClient() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 lg:gap-px lg:bg-[color-mix(in_srgb,var(--vcmv-gold)_15%,transparent)] lg:border lg:border-[color-mix(in_srgb,var(--vcmv-gold)_15%,transparent)]">
             {services.map((service, i) => {
-              const IconComponent = iconMap[service.icon];
+              const IconComponent = iconMap[service.icon] || Briefcase;
               return (
                 <Link href={service.href} key={service.id} passHref legacyBehavior>
                   <motion.a

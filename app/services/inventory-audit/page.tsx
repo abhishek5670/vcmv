@@ -4,17 +4,20 @@ import Footer from "@/components/Footer";
 import InventoryAuditClient from "./InventoryAuditClient";
 
 export const metadata: Metadata = {
-  title: "Inventory Audit Services | V C M V & Associates LLP",
+  title:
+    "Stock Audit & Inventory Verification Services | V C M V & Associates LLP",
   description:
-    "Independent inventory audit, stock verification, physical count, valuation and shrinkage analysis across warehouses, retail outlets and manufacturing units. V C M V & Associates LLP, Chennai.",
+    "Independent stock audit, physical inventory verification, bank consortium audits, warehouse verification, reconciliation, and shrinkage analysis. V C M V & Associates LLP, Chennai.",
   keywords: [
-    "Inventory Audit Chennai",
-    "Stock Audit CA",
-    "Physical Verification",
-    "Warehouse Audit",
+    "Stock Audit Chennai",
+    "Inventory Verification Services",
+    "Bank Stock Audit CA",
+    "Consortium Lender Stock Audit",
+    "Warehouse Physical Verification",
+    "Book vs Physical Reconciliation",
     "Inventory Valuation",
-    "Stock Count",
     "Shrinkage Analysis",
+    "V C M V",
   ],
 };
 

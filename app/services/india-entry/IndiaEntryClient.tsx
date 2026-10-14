@@ -46,8 +46,9 @@ export default function IndiaEntryClient() {
   return (
     <>
       <PageHero
-        heading="Your Gateway to\nDoing Business in India"
-        description="Understand the structural, tax and regulatory considerations involved in establishing an Indian presence. We help foreign businesses evaluate entry options and navigate the setup process."
+        eyebrow="CROSS-BORDER ADVISORY"
+        heading="Foreign Company Incorporation &\nIndia Entry Advisory"
+        description="Navigate Indian entity incorporation, FDI regulations, RBI & FEMA requirements, and cross-border tax structuring with clarity and certainty. We guide overseas enterprises through every stage of establishing an Indian presence."
         dark
       />
 

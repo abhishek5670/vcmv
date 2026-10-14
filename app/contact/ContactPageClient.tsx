@@ -6,17 +6,19 @@ import PageHero from "@/components/PageHero";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const services = [
+  "IPO Advisory and Capital Market Services",
+  "Forensic Audit and Investigation Services",
+  "Foreign Company Incorporation and India Entry Advisory",
+  "Stock Audit and Inventory Verification Services",
   "Direct Tax",
   "International Tax",
   "Transfer Pricing",
   "GST & Indirect Tax",
-  "Taxation of Expatriates",
   "Assurance & Audit",
   "Tax Litigation",
   "Business Valuation",
   "Mergers & Acquisitions",
-  "India Entry Strategies",
-  "Business Advisory",
+  "Taxation of Expatriates",
   "Other",
 ];
 

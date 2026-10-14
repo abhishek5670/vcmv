@@ -41,19 +41,43 @@ export const servicesOverviewContent = {
       href: "/services/gst-indirect-tax",
     },
     {
-      id: "expatriates",
-      icon: "Users",
-      title: "Taxation of Expatriates",
+      id: "ipo-advisory",
+      icon: "Landmark",
+      title: "IPO Advisory & Capital Market Services",
       description:
-        "Tax and regulatory support for expatriates and businesses managing international employee assignments in India.",
-      href: "/services/expatriates",
+        "Comprehensive SME and Mainboard IPO readiness, restatement of financial statements, DRHP assistance, and capital market structuring.",
+      href: "/services/ipo-advisory",
+    },
+    {
+      id: "forensic-audit",
+      icon: "Search",
+      title: "Forensic Audit & Investigation Services",
+      description:
+        "In-depth forensic accounting, fraud investigations, fund diversion detection, IBC Section 43/45/50/66 audits, and dispute advisory.",
+      href: "/services/forensic-audit",
+    },
+    {
+      id: "india-entry",
+      icon: "Building2",
+      title: "Foreign Company Incorporation & India Entry Advisory",
+      description:
+        "End-to-end entity incorporation, FDI regulations, RBI/FEMA compliance, wholly owned subsidiary setup, and cross-border structuring.",
+      href: "/services/india-entry",
+    },
+    {
+      id: "inventory-audit",
+      icon: "Boxes",
+      title: "Stock Audit & Inventory Verification Services",
+      description:
+        "Independent physical stock counts, bank consortium audits, ERP reconciliation, valuation assessment, and shrinkage analysis.",
+      href: "/services/inventory-audit",
     },
     {
       id: "assurance",
       icon: "ShieldCheck",
       title: "Assurance & Audit",
       description:
-        "Statutory, tax, internal and forensic audit services designed to strengthen financial reporting and build stakeholder confidence.",
+        "Statutory, tax, internal and IFC audit services designed to strengthen financial reporting and build stakeholder confidence.",
       href: "/services/assurance",
     },
     {
@@ -81,20 +105,12 @@ export const servicesOverviewContent = {
       href: "/services/mergers-acquisitions",
     },
     {
-      id: "india-entry",
-      icon: "Building2",
-      title: "India Entry Strategies",
+      id: "expatriates",
+      icon: "Users",
+      title: "Taxation of Expatriates",
       description:
-        "Structural, tax and regulatory guidance for foreign businesses establishing an Indian presence for the first time.",
-      href: "/services/india-entry",
-    },
-    {
-      id: "advisory",
-      icon: "Briefcase",
-      title: "Business & Investment Advisory",
-      description:
-        "Strategic business and investment guidance to support critical decisions across growth, restructuring and capital allocation.",
-      href: "/services/advisory",
+        "Tax and regulatory support for expatriates and businesses managing international employee assignments in India.",
+      href: "/services/expatriates",
     },
   ],
 };

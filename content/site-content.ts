@@ -69,40 +69,58 @@ export const aboutContent = {
 
 export const services = [
   {
+    id: "ipo-advisory",
+    title: "IPO Advisory & Capital Markets",
+    description:
+      "SME & Mainboard IPO readiness, restatement of financial statements, DRHP assistance, and capital market structuring.",
+  },
+  {
+    id: "forensic-audit",
+    title: "Forensic Audit & Investigations",
+    description:
+      "In-depth forensic accounting, fraud investigations, fund diversion detection, IBC audits, and dispute resolution advisory.",
+  },
+  {
+    id: "india-entry",
+    title: "Foreign Company Incorporation & India Entry",
+    description:
+      "End-to-end entity setup, wholly owned subsidiaries, FDI regulations, RBI & FEMA compliance, and cross-border structuring.",
+  },
+  {
+    id: "inventory-audit",
+    title: "Stock Audit & Inventory Verification",
+    description:
+      "Independent physical stock counts, bank consortium audits, warehouse verification, reconciliation, and shrinkage analysis.",
+  },
+  {
     id: "direct-tax",
     title: "Direct Tax",
     description:
-      "Strategic tax structuring and advisory that minimises liability while keeping you fully compliant.",
+      "Strategic tax structuring, corporate tax planning, and advisory that minimises liability while keeping you fully compliant.",
   },
   {
     id: "international-tax",
     title: "International Tax",
     description:
-      "Cross-border tax planning and treaty advisory for businesses operating across multiple jurisdictions.",
+      "Cross-border tax planning and treaty advisory for businesses operating across multiple international jurisdictions.",
   },
   {
     id: "transfer-pricing",
     title: "Transfer Pricing",
     description:
-      "Documentation, benchmarking and dispute resolution to protect your inter-company positions.",
+      "Documentation, benchmarking, master/local file compliance, and dispute resolution for inter-company transactions.",
   },
   {
     id: "gst-indirect-tax",
     title: "GST & Indirect Tax",
     description:
-      "End-to-end GST compliance, planning and litigation support tailored to your business model.",
+      "End-to-end GST compliance, refund processing, supply chain tax optimization, and litigation representation.",
   },
   {
     id: "assurance",
-    title: "Assurance",
+    title: "Assurance & Audit",
     description:
-      "Independent, rigorous audits that give stakeholders the confidence your numbers deserve.",
-  },
-  {
-    id: "business-advisory",
-    title: "Business Advisory",
-    description:
-      "Valuations, restructuring and strategic guidance that help you make better decisions, faster.",
+      "Statutory, tax, internal, and IFC audits that deliver rigorous transparency and build stakeholder confidence.",
   },
 ];
 
