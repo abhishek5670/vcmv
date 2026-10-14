@@ -99,7 +99,7 @@ export const teamPageContent: TeamPageContent = {
       name: "Rakesh Kumar",
       designation: "Partner",
       focus: "Audit & Forensic Advisory",
-      image: "/team/rakesh.jpg",
+      image: "/team/rakesh.jpeg",
       phone: "+91 98414 55618",
       email: "rakesh@vcmv.in",
       education: [

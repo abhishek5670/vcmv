@@ -62,7 +62,7 @@ export const aboutContent = {
   label: "WHO WE ARE",
   heading: "Professional expertise.\nPractical thinking.\nLasting value.",
   body: "V C M V & Associates LLP is a multidisciplinary firm of Chartered Accountants specialising in Direct Tax, International Tax, Transfer Pricing, GST, Assurance and Business Advisory. We bring together deep regulatory knowledge and practical commercial insight to help clients navigate complexity—confidently and effectively.",
-  cta: "Discover V C M V →",
+  cta: "Discover V C M V",
   image:
     "https://images.unsplash.com/photo-1577495508048-b635879837f1?w=1000&q=80&fit=crop",
 };

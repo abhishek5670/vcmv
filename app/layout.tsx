@@ -51,8 +51,8 @@ export const metadata: Metadata = {
   },
 };
 
-import { ThemeProvider } from "@/components/ThemeProvider";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
+// import { ThemeProvider } from "@/components/ThemeProvider";
+// import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -109,15 +109,16 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
-        <ThemeProvider
+        {/* Theming option (commented out) */}
+        {/* <ThemeProvider
           attribute="data-theme"
           defaultTheme="default"
           themes={["default", "green", "slate"]}
           disableTransitionOnChange
-        >
+        > */}
           {children}
-          <ThemeSwitcher />
-        </ThemeProvider>
+          {/* <ThemeSwitcher />
+        </ThemeProvider> */}
       </body>
     </html>
   );

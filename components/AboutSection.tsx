@@ -224,7 +224,7 @@ export default function AboutSection() {
             >
               <Link
                 href="/about"
-                className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden rounded-full bg-[var(--vcmv-charcoal)] text-[var(--vcmv-ivory)] transition-colors duration-300 hover:text-[var(--vcmv-charcoal)] border border-transparent hover:border-[var(--vcmv-gold)]"
+                className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden rounded-full bg-vcmv-charcoal text-vcmv-ivory transition-colors duration-300 hover:text-vcmv-charcoal border border-transparent hover:border-vcmv-gold"
                 style={{
                   fontFamily: "var(--font-inter)",
                   fontSize: "0.85rem",
@@ -233,8 +233,8 @@ export default function AboutSection() {
                   textTransform: "uppercase",
                 }}
               >
-                <span className="absolute inset-0 w-full h-full bg-[var(--vcmv-gold)] translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-[0.19,1,0.22,1] pointer-events-none" />
-                <span className="relative z-10 flex items-center gap-3">
+                <span className="absolute inset-0 w-full h-full bg-vcmv-gold translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-[0.19,1,0.22,1] pointer-events-none" />
+                <span className="relative z-10 flex items-center gap-3 text-white">
                   {aboutContent.cta}
                   <motion.span
                     animate={{ x: [0, 5, 0] }}

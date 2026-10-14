@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
 /* ─── VCMV Design Tokens ──────────────────────────────────────────── */
+:root {
+  --theme-darkest: #0E3B2E;
+  --theme-dark:    #1F6F54;
+  --theme-accent:  #5FB88A;
+  --theme-light:   #D7E7DD;
+  --theme-lightest:#F6FBF7;
+}
+
+/* Other color and theming options (commented out) */
+/*
 :root, [data-theme="default"] {
   --theme-darkest: #2b2a28;
   --theme-dark:    #6b6258;
@@ -24,6 +34,7 @@
   --theme-light:   #E5E7EB;
   --theme-lightest:#FFFFFF;
 }
+*/
 
 :root {
   /* Map active theme to existing VCMV variables */
@@ -55,6 +66,12 @@
 }
 
 @theme inline {
+  --color-vcmv-charcoal:       var(--vcmv-charcoal);
+  --color-vcmv-taupe:          var(--vcmv-taupe);
+  --color-vcmv-gold:           var(--vcmv-gold);
+  --color-vcmv-cream:          var(--vcmv-cream);
+  --color-vcmv-ivory:          var(--vcmv-ivory);
+
   --color-background:          var(--background);
   --color-foreground:          var(--foreground);
   --color-muted:               var(--muted);
@@ -111,7 +128,7 @@ a {
 
 /* ─── Selection ───────────────────────────────────────────────────── */
 ::selection {
-  background-color: rgba(201, 168, 106, 0.25);
+  background-color: color-mix(in srgb, var(--theme-accent) 25%, transparent);
   color: var(--vcmv-charcoal);
 }
 
@@ -123,7 +140,7 @@ a {
   background: var(--vcmv-ivory);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(201, 168, 106, 0.45);
+  background: color-mix(in srgb, var(--theme-accent) 45%, transparent);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {

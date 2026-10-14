@@ -22,9 +22,9 @@ export default function ServicesPreview() {
         className="absolute top-0 left-0 right-0 h-px"
         style={{ backgroundColor: "color-mix(in srgb, var(--vcmv-gold) 15%, transparent)" }}
       />
-      
+
       {/* Decorative Gold Glow */}
-      <motion.div 
+      <motion.div
         className="absolute -left-[20%] top-[30%] w-[50%] h-[50%] rounded-full opacity-20 blur-[120px] pointer-events-none"
         style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--vcmv-gold) 40%, transparent) 0%, transparent 70%)" }}
         animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
@@ -32,7 +32,7 @@ export default function ServicesPreview() {
       />
 
       <div className="relative max-w-[90rem] mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24 lg:py-32 xl:py-40 z-10">
-        
+
         {/* Header */}
         <div className="mb-16 md:mb-20 lg:mb-28">
           <motion.div
@@ -59,7 +59,7 @@ export default function ServicesPreview() {
               style={{ backgroundColor: "color-mix(in srgb, var(--vcmv-gold) 15%, transparent)" }}
             />
           </motion.div>
-          
+
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12">
             <h2
               className="max-w-[700px]"
@@ -89,10 +89,10 @@ export default function ServicesPreview() {
                   style={
                     chunk.em
                       ? {
-                          color: "var(--vcmv-gold)",
-                          fontStyle: "italic",
-                          fontWeight: 400,
-                        }
+                        color: "var(--vcmv-gold)",
+                        fontStyle: "italic",
+                        fontWeight: 400,
+                      }
                       : {}
                   }
                 >
@@ -100,7 +100,7 @@ export default function ServicesPreview() {
                 </motion.span>
               ))}
             </h2>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -108,7 +108,7 @@ export default function ServicesPreview() {
             >
               <Link
                 href="/services"
-                className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden rounded-full border border-[var(--vcmv-gold)] bg-transparent text-[var(--vcmv-gold)] transition-colors duration-300 hover:text-[var(--vcmv-charcoal)]"
+                className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden rounded-full border border-vcmv-gold bg-transparent text-vcmv-gold transition-colors duration-300 hover:text-vcmv-charcoal"
                 style={{
                   fontFamily: "var(--font-inter)",
                   fontSize: "0.85rem",
@@ -117,8 +117,8 @@ export default function ServicesPreview() {
                   textTransform: "uppercase",
                 }}
               >
-                <span className="absolute inset-0 w-full h-full bg-[var(--vcmv-gold)] translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-[0.19,1,0.22,1] pointer-events-none" />
-                <span className="relative z-10 flex items-center gap-3">
+                <span className="absolute inset-0 w-full h-full bg-vcmv-gold translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-[0.19,1,0.22,1] pointer-events-none" />
+                <span className="relative z-10 flex items-center gap-3 text-white">
                   View All Services
                   <motion.span
                     animate={{ x: [0, 4, 0] }}
@@ -174,9 +174,9 @@ export default function ServicesPreview() {
                     transformOrigin: "top"
                   }}
                 />
-                
+
                 {/* Hover Background Gradient */}
-                <div 
+                <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   style={{
                     background: "radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--vcmv-gold) 8%, transparent) 0%, transparent 60%)"
@@ -213,7 +213,7 @@ export default function ServicesPreview() {
                 </p>
 
                 {/* Animated Arrow CTA */}
-                <div 
+                <div
                   className="overflow-hidden mt-auto pt-4 border-t border-color-mix(in srgb, var(--vcmv-gold) 15%, transparent) flex items-center justify-between transition-transform duration-500 ease-[0.19,1,0.22,1]"
                   style={{
                     transform: hovered === service.id ? "scale(1.03)" : "scale(1)",
