@@ -9,6 +9,38 @@ export const servicesOverviewContent = {
   },
   services: [
     {
+      id: "forensic-audit",
+      icon: "Search",
+      title: "Forensic Audit & Investigation Services",
+      description:
+        "In-depth forensic accounting, fraud investigations, fund diversion detection, IBC Section 43/45/50/66 audits, and dispute advisory.",
+      href: "/services/forensic-audit",
+    },
+    {
+      id: "inventory-audit",
+      icon: "Boxes",
+      title: "Stock Audit & Inventory Verification Services",
+      description:
+        "Independent physical stock counts, bank consortium audits, ERP reconciliation, valuation assessment, and shrinkage analysis.",
+      href: "/services/inventory-audit",
+    },
+    {
+      id: "ipo-advisory",
+      icon: "Landmark",
+      title: "IPO Advisory & Capital Market Services",
+      description:
+        "Comprehensive SME and Mainboard IPO readiness, restatement of financial statements, DRHP assistance, and capital market structuring.",
+      href: "/services/ipo-advisory",
+    },
+    {
+      id: "india-entry",
+      icon: "Building2",
+      title: "Foreign Company Incorporation & India Entry Advisory",
+      description:
+        "End-to-end entity incorporation, FDI regulations, RBI/FEMA compliance, wholly owned subsidiary setup, and cross-border structuring.",
+      href: "/services/india-entry",
+    },
+    {
       id: "direct-tax",
       icon: "Scale",
       title: "Direct Tax",
@@ -39,38 +71,6 @@ export const servicesOverviewContent = {
       description:
         "Advisory, compliance, refunds and litigation across GST, customs and indirect tax—aligned to your supply chain and business model.",
       href: "/services/gst-indirect-tax",
-    },
-    {
-      id: "ipo-advisory",
-      icon: "Landmark",
-      title: "IPO Advisory & Capital Market Services",
-      description:
-        "Comprehensive SME and Mainboard IPO readiness, restatement of financial statements, DRHP assistance, and capital market structuring.",
-      href: "/services/ipo-advisory",
-    },
-    {
-      id: "forensic-audit",
-      icon: "Search",
-      title: "Forensic Audit & Investigation Services",
-      description:
-        "In-depth forensic accounting, fraud investigations, fund diversion detection, IBC Section 43/45/50/66 audits, and dispute advisory.",
-      href: "/services/forensic-audit",
-    },
-    {
-      id: "india-entry",
-      icon: "Building2",
-      title: "Foreign Company Incorporation & India Entry Advisory",
-      description:
-        "End-to-end entity incorporation, FDI regulations, RBI/FEMA compliance, wholly owned subsidiary setup, and cross-border structuring.",
-      href: "/services/india-entry",
-    },
-    {
-      id: "inventory-audit",
-      icon: "Boxes",
-      title: "Stock Audit & Inventory Verification Services",
-      description:
-        "Independent physical stock counts, bank consortium audits, ERP reconciliation, valuation assessment, and shrinkage analysis.",
-      href: "/services/inventory-audit",
     },
     {
       id: "assurance",

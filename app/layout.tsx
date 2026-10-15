@@ -166,6 +166,38 @@ const organizationSchema = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
+              name: "Forensic Audit",
+              url: `${BASE_URL}/services/forensic-audit`,
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Inventory Audit",
+              url: `${BASE_URL}/services/inventory-audit`,
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "IPO Advisory",
+              url: `${BASE_URL}/services/ipo-advisory`,
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "India Entry Strategies",
+              url: `${BASE_URL}/services/india-entry`,
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
               name: "Direct Tax Advisory",
               url: `${BASE_URL}/services/direct-tax`,
             },
@@ -206,8 +238,8 @@ const organizationSchema = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Forensic Audit",
-              url: `${BASE_URL}/services/forensic-audit`,
+              name: "Tax Litigation",
+              url: `${BASE_URL}/services/litigation`,
             },
           },
           {
@@ -230,40 +262,8 @@ const organizationSchema = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "India Entry Strategies",
-              url: `${BASE_URL}/services/india-entry`,
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "IPO Advisory",
-              url: `${BASE_URL}/services/ipo-advisory`,
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Inventory Audit",
-              url: `${BASE_URL}/services/inventory-audit`,
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
               name: "Taxation of Expatriates",
               url: `${BASE_URL}/services/expatriates`,
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Tax Litigation",
-              url: `${BASE_URL}/services/litigation`,
             },
           },
         ],

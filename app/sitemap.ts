@@ -4,14 +4,14 @@ import { teamPageContent } from "@/content/team-content";
 const BASE_URL = "https://vcmv.in";
 
 const servicesSlugs = [
+  "forensic-audit",
+  "inventory-audit",
+  "ipo-advisory",
+  "india-entry",
   "direct-tax",
   "international-tax",
   "transfer-pricing",
   "gst-indirect-tax",
-  "ipo-advisory",
-  "forensic-audit",
-  "india-entry",
-  "inventory-audit",
   "assurance",
   "litigation",
   "valuation",

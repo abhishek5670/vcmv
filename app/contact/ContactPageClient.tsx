@@ -6,10 +6,10 @@ import PageHero from "@/components/PageHero";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const services = [
-  "IPO Advisory and Capital Market Services",
   "Forensic Audit and Investigation Services",
-  "Foreign Company Incorporation and India Entry Advisory",
   "Stock Audit and Inventory Verification Services",
+  "IPO Advisory and Capital Market Services",
+  "Foreign Company Incorporation and India Entry Advisory",
   "Direct Tax",
   "International Tax",
   "Transfer Pricing",

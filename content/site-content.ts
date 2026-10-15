@@ -69,28 +69,28 @@ export const aboutContent = {
 
 export const services = [
   {
-    id: "ipo-advisory",
-    title: "IPO Advisory & Capital Markets",
-    description:
-      "SME & Mainboard IPO readiness, restatement of financial statements, DRHP assistance, and capital market structuring.",
-  },
-  {
     id: "forensic-audit",
     title: "Forensic Audit & Investigations",
     description:
       "In-depth forensic accounting, fraud investigations, fund diversion detection, IBC audits, and dispute resolution advisory.",
   },
   {
-    id: "india-entry",
-    title: "Foreign Company Incorporation & India Entry",
-    description:
-      "End-to-end entity setup, wholly owned subsidiaries, FDI regulations, RBI & FEMA compliance, and cross-border structuring.",
-  },
-  {
     id: "inventory-audit",
     title: "Stock Audit & Inventory Verification",
     description:
       "Independent physical stock counts, bank consortium audits, warehouse verification, reconciliation, and shrinkage analysis.",
+  },
+  {
+    id: "ipo-advisory",
+    title: "IPO Advisory & Capital Markets",
+    description:
+      "SME & Mainboard IPO readiness, restatement of financial statements, DRHP assistance, and capital market structuring.",
+  },
+  {
+    id: "india-entry",
+    title: "Foreign Company Incorporation & India Entry",
+    description:
+      "End-to-end entity setup, wholly owned subsidiaries, FDI regulations, RBI & FEMA compliance, and cross-border structuring.",
   },
   {
     id: "direct-tax",
