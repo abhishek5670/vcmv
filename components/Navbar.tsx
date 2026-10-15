@@ -29,7 +29,7 @@ function NavbarBrandLogo({
   return (
     <div className="relative flex items-center">
       <img
-        src="/VCMV-white.png"
+        src="/VCMV-logo.png"
         alt="VCMV Logo"
         className={cn(
           "w-auto object-contain transition-opacity duration-300",
@@ -38,7 +38,7 @@ function NavbarBrandLogo({
         )}
       />
       <img
-        src="/VCMV-logo.png"
+        src="/VCMV-white.png"
         alt="VCMV Logo"
         className={cn(
           "w-auto object-contain transition-opacity duration-300",
@@ -63,7 +63,7 @@ export default function VCMVNavbar() {
           className="relative z-20 flex items-center px-2 py-1 no-underline"
           style={{ textDecoration: "none" }}
         >
-          <NavbarBrandLogo className="h-10 w-20" />
+          <NavbarBrandLogo className="h-12 w-48  object-contain " />
         </Link>
 
         {/* Nav Links */}
@@ -82,7 +82,7 @@ export default function VCMVNavbar() {
         <MobileNavHeader>
           {/* Logo */}
           <Link href="/" className="relative z-20 flex items-center px-1">
-            <NavbarBrandLogo className="h-10 sm:h-9" />
+            <NavbarBrandLogo className="h-8 w-48 object-contain" />
           </Link>
           <div className="relative z-30">
             <MobileNavToggle
