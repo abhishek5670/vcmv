@@ -51,6 +51,14 @@ interface MobileNavMenuProps {
 
 import { GlassFilter } from "./liquid-glass";
 
+interface NavbarContextType {
+  visible: boolean;
+}
+
+export const NavbarContext = React.createContext<NavbarContextType>({ visible: false });
+
+export const useNavbar = () => React.useContext(NavbarContext);
+
 export const Navbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll({
@@ -68,7 +76,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   });
 
   return (
-    <>
+    <NavbarContext.Provider value={{ visible }}>
       <GlassFilter />
       <motion.div
         ref={ref}
@@ -83,7 +91,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
             : child,
         )}
       </motion.div>
-    </>
+    </NavbarContext.Provider>
   );
 };
 
@@ -127,7 +135,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         <div className="w-full flex flex-row items-center justify-between px-6 py-3 relative">
           {React.Children.map(children, (child) =>
             React.isValidElement(child)
-              ? React.cloneElement(child as React.ReactElement<any>, { visible })
+              ? React.cloneElement(child as React.ReactElement<{ visible?: boolean }>, { visible })
               : child
           )}
         </div>
@@ -170,9 +178,26 @@ export const NavItems = ({ items, className, onItemClick, visible }: NavItemsPro
   );
 };
 
-export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
+export const MobileNav = ({ children, className, visible: propVisible }: MobileNavProps) => {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const { visible: contextVisible } = useNavbar();
+  const visible = propVisible ?? contextVisible;
+
+  // Separate header/content from MobileNavMenu so MobileNavMenu is not trapped inside GlassEffect's overflow-hidden
+  const headerChildren: React.ReactNode[] = [];
+  const menuChildren: React.ReactNode[] = [];
+
+  React.Children.forEach(children, (child) => {
+    if (
+      React.isValidElement(child) &&
+      (child.type === MobileNavMenu || (child.props as { isOpen?: boolean })?.isOpen !== undefined)
+    ) {
+      menuChildren.push(child);
+    } else {
+      headerChildren.push(child);
+    }
+  });
 
   return (
     <motion.div
@@ -205,9 +230,11 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         }}
       >
         <div className="w-full flex-col items-center justify-between px-4 py-3 relative">
-          {children}
+          {headerChildren}
         </div>
       </GlassEffect>
+
+      {menuChildren}
     </motion.div>
   );
 };
@@ -238,22 +265,33 @@ export const MobileNavMenu = ({
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-xl px-6 py-8",
-            className,
-          )}
-          style={{
-            backgroundColor: "var(--vcmv-ivory)",
-            boxShadow: "0 16px 48px color-mix(in srgb, var(--vcmv-charcoal) 12%, transparent)",
-            border: "1px solid color-mix(in srgb, var(--vcmv-gold) 20%, transparent)",
-          }}
-        >
-          {children}
-        </motion.div>
+        <>
+          {/* Backdrop overlay */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="fixed inset-0 z-40 backdrop-blur-xs lg:hidden"
+            aria-hidden="true"
+          />
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            className={cn(
+              "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-xl px-6 py-8",
+              className,
+            )}
+            style={{
+              backgroundColor: "var(--vcmv-ivory)",
+              boxShadow: "0 16px 48px color-mix(in srgb, var(--vcmv-charcoal) 12%, transparent)",
+              border: "1px solid color-mix(in srgb, var(--vcmv-gold) 20%, transparent)",
+            }}
+          >
+            {children}
+          </motion.div>
+        </>
       )}
     </AnimatePresence>
   );
@@ -266,16 +304,32 @@ export const MobileNavToggle = ({
   isOpen: boolean;
   onClick: () => void;
 }) => {
-  return isOpen ? (
-    <IconX
+  const { visible } = useNavbar();
+
+  return (
+    <button
+      type="button"
       onClick={onClick}
-      className="cursor-pointer text-white group-[.is-scrolled]:text-[var(--vcmv-charcoal)] transition-colors duration-300"
-    />
-  ) : (
-    <IconMenu2
-      onClick={onClick}
-      className="cursor-pointer text-white group-[.is-scrolled]:text-[var(--vcmv-charcoal)] transition-colors duration-300"
-    />
+      aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+      aria-expanded={isOpen}
+      className="p-2 -mr-2 cursor-pointer flex items-center justify-center transition-colors duration-300 focus:outline-none select-none bg-transparent border-none"
+    >
+      {isOpen ? (
+        <IconX
+          className={cn(
+            "w-6 h-6 transition-colors duration-300",
+            visible ? "text-[var(--vcmv-charcoal)]" : "text-white group-[.is-scrolled]:text-[var(--vcmv-charcoal)]"
+          )}
+        />
+      ) : (
+        <IconMenu2
+          className={cn(
+            "w-6 h-6 transition-colors duration-300",
+            visible ? "text-[var(--vcmv-charcoal)]" : "text-white group-[.is-scrolled]:text-[var(--vcmv-charcoal)]"
+          )}
+        />
+      )}
+    </button>
   );
 };
 

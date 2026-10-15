@@ -3,29 +3,6 @@
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 
-// Lucide dropped brand icons — using inline SVGs instead
-const LinkedInIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5" aria-hidden="true">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect x="2" y="9" width="4" height="12" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
-
-const XIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5" aria-hidden="true">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>
-);
-
-const InstagramIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5" aria-hidden="true">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-  </svg>
-);
-
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -33,12 +10,6 @@ const navLinks = [
   { name: "Team", href: "/team" },
   { name: "Insights", href: "/insights" },
   { name: "Contact", href: "/contact" },
-];
-
-const socialLinks = [
-  { name: "LinkedIn", href: "#", icon: LinkedInIcon },
-  { name: "X / Twitter", href: "#", icon: XIcon },
-  { name: "Instagram", href: "#", icon: InstagramIcon },
 ];
 
 export default function Footer() {
@@ -60,27 +31,20 @@ export default function Footer() {
         className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-6 md:gap-8 lg:gap-12 lg:gap-16 lg:gap-0 pt-16 pb-10"
         style={{ borderBottom: "1px solid color-mix(in srgb, var(--vcmv-gold) 12%, transparent)" }}
       >
-        {/* Left — Navigation + Socials */}
+        {/* Left — Navigation */}
         <div
           className="flex flex-col justify-between lg:pr-16"
           style={{ borderRight: "0px" }}
         >
           {/* Logo mark */}
           <div className="mb-10">
-            <span
-              style={{
-                fontFamily: "var(--font-cormorant)",
-                fontSize: "1.05rem",
-                fontWeight: 600,
-                color: "var(--vcmv-ivory)",
-                letterSpacing: "0.02em",
-              }}
-            >
-              V C M V{" "}
-              <span style={{ color: "var(--vcmv-gold)", fontWeight: 400 }}>
-                &amp; Associates LLP
-              </span>
-            </span>
+            <Link href="/" className="inline-block" style={{ textDecoration: "none" }}>
+              <img
+                src="/VCMV-white.png"
+                alt="VCMV Logo"
+                className="h-9 md:h-11 w-auto mb-2 object-contain"
+              />
+            </Link>
             <p
               className="mt-1 text-xs tracking-[0.18em] uppercase"
               style={{ color: "var(--vcmv-taupe)", fontFamily: "var(--font-inter)" }}
@@ -90,7 +54,7 @@ export default function Footer() {
           </div>
 
           {/* Nav links */}
-          <nav className="mb-12">
+          <nav className="mb-6">
             <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.name}>
@@ -118,37 +82,6 @@ export default function Footer() {
               ))}
             </ul>
           </nav>
-
-          {/* Social links */}
-          <div className="flex items-center gap-4">
-            {socialLinks.map((s) => {
-              const Icon = s.icon;
-              return (
-                <Link
-                  key={s.name}
-                  href={s.href}
-                  aria-label={s.name}
-                  className="flex h-9 w-9 items-center justify-center transition-all duration-200"
-                  style={{
-                    border: "1px solid color-mix(in srgb, var(--vcmv-gold) 20%, transparent)",
-                    color: "color-mix(in srgb, var(--vcmv-cream) 50%, transparent)",
-                  }}
-                  onMouseEnter={(e) => {
-                    const el = e.currentTarget as HTMLElement;
-                    el.style.borderColor = "var(--vcmv-gold)";
-                    el.style.color = "var(--vcmv-gold)";
-                  }}
-                  onMouseLeave={(e) => {
-                    const el = e.currentTarget as HTMLElement;
-                    el.style.borderColor = "color-mix(in srgb, var(--vcmv-gold) 20%, transparent)";
-                    el.style.color = "color-mix(in srgb, var(--vcmv-cream) 50%, transparent)";
-                  }}
-                >
-                  <Icon />
-                </Link>
-              );
-            })}
-          </div>
         </div>
 
         {/* Right — Contact block */}

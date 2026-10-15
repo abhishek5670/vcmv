@@ -14,7 +14,7 @@ export const aboutPageContent = {
       "V C M V & Associates was converted from a partnership firm into an LLP with effect from 17 January 2019, pursuant to approval from the Ministry of Corporate Affairs and the Institute of Chartered Accountants of India.",
     ],
     stats: [
-      { value: "4", label: "Partners" },
+      { value: "3", label: "Partners" },
       { value: "25+", label: "Years Combined Experience" },
       { value: "2019", label: "LLP Registration" },
       { value: "Big4", label: "Alumni Background" },

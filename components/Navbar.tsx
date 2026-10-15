@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 import {
   Navbar,
   NavBody,
@@ -10,8 +12,43 @@ import {
   MobileNavToggle,
   MobileNavMenu,
   NavbarButton,
+  useNavbar,
 } from "@/components/ui/resizable-navbar";
 import { navItems } from "@/content/site-content";
+
+function NavbarBrandLogo({
+  visible: propVisible,
+  className = "h-8 md:h-10",
+}: {
+  visible?: boolean;
+  className?: string;
+}) {
+  const { visible: contextVisible } = useNavbar();
+  const isScrolled = propVisible ?? contextVisible;
+
+  return (
+    <div className="relative flex items-center">
+      <img
+        src="/VCMV-white.png"
+        alt="VCMV Logo"
+        className={cn(
+          "w-auto object-contain transition-opacity duration-300",
+          className,
+          isScrolled ? "opacity-0 absolute inset-0 pointer-events-none" : "opacity-100 relative"
+        )}
+      />
+      <img
+        src="/VCMV-logo.png"
+        alt="VCMV Logo"
+        className={cn(
+          "w-auto object-contain transition-opacity duration-300",
+          className,
+          isScrolled ? "opacity-100 relative" : "opacity-0 absolute inset-0 pointer-events-none"
+        )}
+      />
+    </div>
+  );
+}
 
 export default function VCMVNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,24 +58,13 @@ export default function VCMVNavbar() {
       {/* Desktop */}
       <NavBody>
         {/* Logo */}
-        <a
+        <Link
           href="/"
-          className="relative z-20 flex items-center gap-2 px-2 py-1 no-underline"
+          className="relative z-20 flex items-center px-2 py-1 no-underline"
           style={{ textDecoration: "none" }}
         >
-          <span
-            className="text-base font-semibold tracking-tight text-white group-[.is-scrolled]:text-[var(--vcmv-charcoal)] transition-colors duration-300"
-            style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.1rem", letterSpacing: "0.01em" }}
-          >
-            V C M V <span className="font-normal text-white group-[.is-scrolled]:text-[var(--vcmv-gold)] transition-colors duration-300">&amp; Associates</span>
-            <span
-              className="block text-[10px] tracking-[0.18em] uppercase font-normal text-white/80 group-[.is-scrolled]:text-[var(--vcmv-taupe)] transition-colors duration-300"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
-              LLP
-            </span>
-          </span>
-        </a>
+          <NavbarBrandLogo className="h-16 w-24" />
+        </Link>
 
         {/* Nav Links */}
         <NavItems items={navItems} />
@@ -55,14 +81,9 @@ export default function VCMVNavbar() {
       <MobileNav>
         <MobileNavHeader>
           {/* Logo */}
-          <a href="/" className="relative z-20 flex items-center gap-2 px-2">
-            <span
-              className="text-base font-semibold text-white group-[.is-scrolled]:text-[var(--vcmv-charcoal)] transition-colors duration-300"
-              style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.05rem" }}
-            >
-              V C M V <span className="font-normal text-white group-[.is-scrolled]:text-[var(--vcmv-gold)] transition-colors duration-300">&amp; Associates LLP</span>
-            </span>
-          </a>
+          <Link href="/" className="relative z-20 flex items-center px-1">
+            <NavbarBrandLogo className="h-10 sm:h-9" />
+          </Link>
           <div className="relative z-30">
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
