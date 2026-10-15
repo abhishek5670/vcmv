@@ -63,7 +63,7 @@ export default function VCMVNavbar() {
           className="relative z-20 flex items-center px-2 py-1 no-underline"
           style={{ textDecoration: "none" }}
         >
-          <NavbarBrandLogo className="h-16 w-24" />
+          <NavbarBrandLogo className="h-10 w-20" />
         </Link>
 
         {/* Nav Links */}
