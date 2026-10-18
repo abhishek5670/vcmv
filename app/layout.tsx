@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "/VCMV-logo.png",
-        width: 1200,
-        height: 630,
+        url: "/VCMV-white.png",
+        width: 2028,
+        height: 384,
         alt: "V C M V & Associates LLP — Chartered Accountants & Advisors",
         type: "image/png",
       },
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: "V C M V & Associates LLP — CA, Tax, Assurance & Business Advisory",
     description:
       "Professional expertise. Practical thinking. Lasting value. CA, Tax, Assurance & Business Advisory in Chennai, India.",
-    images: ["/VCMV-logo.png"],
+    images: ["/VCMV-white.png"],
   },
   alternates: {
     canonical: BASE_URL,
@@ -95,11 +95,11 @@ const organizationSchema = {
       url: BASE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${BASE_URL}/VCMV-logo.png`,
-        width: 1200,
-        height: 630,
+        url: `${BASE_URL}/VCMV-white.png`,
+        width: 2028,
+        height: 384,
       },
-      image: `${BASE_URL}/VCMV-logo.png`,
+      image: `${BASE_URL}/VCMV-white.png`,
       description:
         "V C M V & Associates LLP is a multidisciplinary Chartered Accountants firm founded by Big4 alumni in Chennai, India. Specialising in Direct Tax, International Tax, Transfer Pricing, GST, Assurance, Forensic Audit, Business Valuation, M&A, and India Entry Advisory.",
       address: {
@@ -304,6 +304,8 @@ export default function RootLayout({
         {/* GEO — AI answer engine discovery */}
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs manifest" />
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLMs full content" />
+        {/* Universal link preview thumbnail fallback */}
+        <link rel="image_src" href={`${BASE_URL}/VCMV-white.png`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

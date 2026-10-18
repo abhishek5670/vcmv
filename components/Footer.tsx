@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="mb-10">
             <Link href="/" className="inline-block" style={{ textDecoration: "none" }}>
               <img
-                src="/VCMV-white.png"
+                src="/VCMV-logo.png"
                 alt="VCMV Logo"
                 className="h-9 md:h-11 w-auto mb-2 object-contain"
               />
